@@ -1,0 +1,780 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		119FAF701F9F253D686C1C2510FB46F9 /* PinchableImageView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EFDFCB33A873388C82010F8F2D78FB6 /* PinchableImageView-dummy.m */; };
+		17206FE27E3DE93B430327F097679187 /* PinchableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7081AA560E143F7BEF3AAA39E02B85FD /* PinchableImageView.swift */; };
+		2F035B23C73291815133F24CF523FD7D /* Pods-PinchableImageView_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B9151F38A59B10A2ECDBC8AAA41553FC /* Pods-PinchableImageView_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		38129779BB628F397A9B8F280FCE5747 /* Pods-PinchableImageView_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 97D89E698AED596634CAD38F92795741 /* Pods-PinchableImageView_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3CE5602EDFDE7E61CA18ED0C5048E7FC /* Pods-PinchableImageView_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 17AD84CFA386E02E4EEC58BC9A155C90 /* Pods-PinchableImageView_Tests-dummy.m */; };
+		403FFC73FF254CC91DF756E49E5E6767 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
+		4BB9CDC16382D3ECB4769637050EED23 /* PinchableImageView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0FABF3BBA21DDC7DB5A7A445362D806D /* PinchableImageView.bundle */; };
+		7743D3E426AC513B6F84457FD2B860C4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
+		9D7091A22EA6069E0214038985BC716A /* Pods-PinchableImageView_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F3B01B91E4C1D24DBB284562BC4F4AC7 /* Pods-PinchableImageView_Example-dummy.m */; };
+		ADC7E3FAF87CD835AD32F1285D53167E /* PinchableImageView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CC9072CA70A4CD4C57F31866E1E88E9F /* PinchableImageView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E7CABE3D3B16576DF2E2CEC40C12666A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4D9F5B456584162535C12731071CB9F6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 05E09F6C685101EF538504F090B32A6D;
+			remoteInfo = "PinchableImageView-PinchableImageView";
+		};
+		AA29977FBBB8715F618FC6B73BF43B68 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D9DFBDF0BE4E8740EAB25927FD4012B;
+			remoteInfo = PinchableImageView;
+		};
+		CC1F96D6BE0FF1E08777E0B2F5313753 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D9DFBDF0BE4E8740EAB25927FD4012B;
+			remoteInfo = PinchableImageView;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0335DE4EBCB54AE452C1B3C89B7A73AF /* PinchableImageView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PinchableImageView-prefix.pch"; sourceTree = "<group>"; };
+		0E674991D0941079A2019CBFD8362409 /* PinchableImageView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PinchableImageView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0FABF3BBA21DDC7DB5A7A445362D806D /* PinchableImageView.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PinchableImageView.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		17AD84CFA386E02E4EEC58BC9A155C90 /* Pods-PinchableImageView_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PinchableImageView_Tests-dummy.m"; sourceTree = "<group>"; };
+		1EFDFCB33A873388C82010F8F2D78FB6 /* PinchableImageView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PinchableImageView-dummy.m"; sourceTree = "<group>"; };
+		2D272360E288DCBADC40AA428A6F1E1F /* Pods-PinchableImageView_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PinchableImageView_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		2EFF71B60C18C3370EF544F71F39E244 /* Pods-PinchableImageView_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PinchableImageView_Example.release.xcconfig"; sourceTree = "<group>"; };
+		3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		541F1434BEC3AAEE91E89C51AB592716 /* Pods-PinchableImageView_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PinchableImageView_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		5D290798A7F3E6306BE89215E10CDAEB /* Pods-PinchableImageView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PinchableImageView_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		626B1912C7DEAD29462BFCB3C5A13F9B /* Pods-PinchableImageView_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-PinchableImageView_Tests.modulemap"; sourceTree = "<group>"; };
+		6ADECCB805AF4CDCAAB76A4FCC548127 /* Pods-PinchableImageView_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PinchableImageView_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		7081AA560E143F7BEF3AAA39E02B85FD /* PinchableImageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PinchableImageView.swift; sourceTree = "<group>"; };
+		799DE4514D84721B03ACCA35B1A0E0D9 /* Pods-PinchableImageView_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PinchableImageView_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		81DC101991BA3BF2BFB8E6E6A58F7941 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		92B97CFA4D93F0F1AAE849DA6D9982EC /* PinchableImageView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PinchableImageView.xcconfig; sourceTree = "<group>"; };
+		97D89E698AED596634CAD38F92795741 /* Pods-PinchableImageView_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PinchableImageView_Example-umbrella.h"; sourceTree = "<group>"; };
+		A00E36349CF97C3A96E89F737DFF8A26 /* Pods_PinchableImageView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PinchableImageView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2A6DB6A4B846E2E81B70C55213E5251 /* Pods-PinchableImageView_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PinchableImageView_Example-resources.sh"; sourceTree = "<group>"; };
+		B430932CA2482A9BE76F22B18AEB9E8B /* Pods_PinchableImageView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PinchableImageView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9151F38A59B10A2ECDBC8AAA41553FC /* Pods-PinchableImageView_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PinchableImageView_Tests-umbrella.h"; sourceTree = "<group>"; };
+		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		C41B997E79CA81A175100A6BE338C80F /* PinchableImageView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = PinchableImageView.modulemap; sourceTree = "<group>"; };
+		C996D3F0581F1F1D39F230BFE650098B /* Pods-PinchableImageView_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PinchableImageView_Example-frameworks.sh"; sourceTree = "<group>"; };
+		CC0C5DBD3ED455B945457DDA7CAF0370 /* Pods-PinchableImageView_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PinchableImageView_Tests-frameworks.sh"; sourceTree = "<group>"; };
+		CC9072CA70A4CD4C57F31866E1E88E9F /* PinchableImageView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PinchableImageView-umbrella.h"; sourceTree = "<group>"; };
+		D76CDB585F4D40AB07452F906EF51A5E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DD71AA1A5E26E8F7D31289E4572516A4 /* Pods-PinchableImageView_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-PinchableImageView_Example.modulemap"; sourceTree = "<group>"; };
+		F3B01B91E4C1D24DBB284562BC4F4AC7 /* Pods-PinchableImageView_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PinchableImageView_Example-dummy.m"; sourceTree = "<group>"; };
+		F5C951A6B92E80F7E08A84DDE7AAE2EA /* Pods-PinchableImageView_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PinchableImageView_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		F6F781DA1A44F7EED112A600A7467EF2 /* Pods-PinchableImageView_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PinchableImageView_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		FB36F03C35D0279E43CAA05F01C70F65 /* Pods-PinchableImageView_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PinchableImageView_Tests-resources.sh"; sourceTree = "<group>"; };
+		FC85945EA79B370E54844EA9D7E6DC49 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		11C6A11AB7C89BD0285A4F7E4E77D763 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				403FFC73FF254CC91DF756E49E5E6767 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D1164EC971C38D2869C50EFE4BA2CE4F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7743D3E426AC513B6F84457FD2B860C4 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D85C89A3C505E0E6B89ED9DD8E499B4F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE4BF5659750DCF90B4BBA464BABC1A2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E7CABE3D3B16576DF2E2CEC40C12666A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		432F78CAC9A42D6767444BBA7DDCC35D /* PinchableImageView */ = {
+			isa = PBXGroup;
+			children = (
+				8D7847441C786B0121F09CC5AADEAAC1 /* Pod */,
+				9BCEE8E211745312B79F15C7552475C2 /* Support Files */,
+			);
+			name = PinchableImageView;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		6945EC4F4B8BA52F5981F8255B5D8973 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				432F78CAC9A42D6767444BBA7DDCC35D /* PinchableImageView */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
+				6945EC4F4B8BA52F5981F8255B5D8973 /* Development Pods */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				FDAC61579D742C1743CD22C54A4923CB /* Products */,
+				A57E02EFC3557CCB573711173805CC8A /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		7F423998D8EF09D5F193C8231B37450A /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				7081AA560E143F7BEF3AAA39E02B85FD /* PinchableImageView.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		8D7847441C786B0121F09CC5AADEAAC1 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				7F423998D8EF09D5F193C8231B37450A /* Classes */,
+			);
+			path = Pod;
+			sourceTree = "<group>";
+		};
+		8FD29BB125199F5FD12F259C94DF59AF /* Pods-PinchableImageView_Example */ = {
+			isa = PBXGroup;
+			children = (
+				D76CDB585F4D40AB07452F906EF51A5E /* Info.plist */,
+				DD71AA1A5E26E8F7D31289E4572516A4 /* Pods-PinchableImageView_Example.modulemap */,
+				799DE4514D84721B03ACCA35B1A0E0D9 /* Pods-PinchableImageView_Example-acknowledgements.markdown */,
+				F6F781DA1A44F7EED112A600A7467EF2 /* Pods-PinchableImageView_Example-acknowledgements.plist */,
+				F3B01B91E4C1D24DBB284562BC4F4AC7 /* Pods-PinchableImageView_Example-dummy.m */,
+				C996D3F0581F1F1D39F230BFE650098B /* Pods-PinchableImageView_Example-frameworks.sh */,
+				A2A6DB6A4B846E2E81B70C55213E5251 /* Pods-PinchableImageView_Example-resources.sh */,
+				97D89E698AED596634CAD38F92795741 /* Pods-PinchableImageView_Example-umbrella.h */,
+				5D290798A7F3E6306BE89215E10CDAEB /* Pods-PinchableImageView_Example.debug.xcconfig */,
+				2EFF71B60C18C3370EF544F71F39E244 /* Pods-PinchableImageView_Example.release.xcconfig */,
+			);
+			name = "Pods-PinchableImageView_Example";
+			path = "Target Support Files/Pods-PinchableImageView_Example";
+			sourceTree = "<group>";
+		};
+		9BCEE8E211745312B79F15C7552475C2 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				81DC101991BA3BF2BFB8E6E6A58F7941 /* Info.plist */,
+				C41B997E79CA81A175100A6BE338C80F /* PinchableImageView.modulemap */,
+				92B97CFA4D93F0F1AAE849DA6D9982EC /* PinchableImageView.xcconfig */,
+				1EFDFCB33A873388C82010F8F2D78FB6 /* PinchableImageView-dummy.m */,
+				0335DE4EBCB54AE452C1B3C89B7A73AF /* PinchableImageView-prefix.pch */,
+				CC9072CA70A4CD4C57F31866E1E88E9F /* PinchableImageView-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/PinchableImageView";
+			sourceTree = "<group>";
+		};
+		A57E02EFC3557CCB573711173805CC8A /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				8FD29BB125199F5FD12F259C94DF59AF /* Pods-PinchableImageView_Example */,
+				E186AC6A21AF8BE125EAD0AF9E17D3B8 /* Pods-PinchableImageView_Tests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BF6342C8B29F4CEEA088EFF7AB4DE362 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BF6342C8B29F4CEEA088EFF7AB4DE362 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		E186AC6A21AF8BE125EAD0AF9E17D3B8 /* Pods-PinchableImageView_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				FC85945EA79B370E54844EA9D7E6DC49 /* Info.plist */,
+				626B1912C7DEAD29462BFCB3C5A13F9B /* Pods-PinchableImageView_Tests.modulemap */,
+				F5C951A6B92E80F7E08A84DDE7AAE2EA /* Pods-PinchableImageView_Tests-acknowledgements.markdown */,
+				2D272360E288DCBADC40AA428A6F1E1F /* Pods-PinchableImageView_Tests-acknowledgements.plist */,
+				17AD84CFA386E02E4EEC58BC9A155C90 /* Pods-PinchableImageView_Tests-dummy.m */,
+				CC0C5DBD3ED455B945457DDA7CAF0370 /* Pods-PinchableImageView_Tests-frameworks.sh */,
+				FB36F03C35D0279E43CAA05F01C70F65 /* Pods-PinchableImageView_Tests-resources.sh */,
+				B9151F38A59B10A2ECDBC8AAA41553FC /* Pods-PinchableImageView_Tests-umbrella.h */,
+				6ADECCB805AF4CDCAAB76A4FCC548127 /* Pods-PinchableImageView_Tests.debug.xcconfig */,
+				541F1434BEC3AAEE91E89C51AB592716 /* Pods-PinchableImageView_Tests.release.xcconfig */,
+			);
+			name = "Pods-PinchableImageView_Tests";
+			path = "Target Support Files/Pods-PinchableImageView_Tests";
+			sourceTree = "<group>";
+		};
+		FDAC61579D742C1743CD22C54A4923CB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0FABF3BBA21DDC7DB5A7A445362D806D /* PinchableImageView.bundle */,
+				0E674991D0941079A2019CBFD8362409 /* PinchableImageView.framework */,
+				B430932CA2482A9BE76F22B18AEB9E8B /* Pods_PinchableImageView_Example.framework */,
+				A00E36349CF97C3A96E89F737DFF8A26 /* Pods_PinchableImageView_Tests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		47E58EA0CC1135713D98E782AE2E0BD5 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ADC7E3FAF87CD835AD32F1285D53167E /* PinchableImageView-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A26369C2C2887E2E72E972D096A9406D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				38129779BB628F397A9B8F280FCE5747 /* Pods-PinchableImageView_Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E7127B7BA8BE7CB68FBC4882579C83C0 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F035B23C73291815133F24CF523FD7D /* Pods-PinchableImageView_Tests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		05E09F6C685101EF538504F090B32A6D /* PinchableImageView-PinchableImageView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A008233BE6EC5B588A92E0CF713EF685 /* Build configuration list for PBXNativeTarget "PinchableImageView-PinchableImageView" */;
+			buildPhases = (
+				EECD573D44F13A78CEC85374B720E0F1 /* Sources */,
+				D85C89A3C505E0E6B89ED9DD8E499B4F /* Frameworks */,
+				56DA48C97D4BE07BEB1EC7C1B019C9AE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "PinchableImageView-PinchableImageView";
+			productName = "PinchableImageView-PinchableImageView";
+			productReference = 0FABF3BBA21DDC7DB5A7A445362D806D /* PinchableImageView.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+		497E38B860CDA80207D66B11E3326159 /* Pods-PinchableImageView_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 39ACCDB15273181D9FD0A9CCBCB19B7A /* Build configuration list for PBXNativeTarget "Pods-PinchableImageView_Tests" */;
+			buildPhases = (
+				8B31CEB8B6C4166E005A4BBD511BB5CD /* Sources */,
+				D1164EC971C38D2869C50EFE4BA2CE4F /* Frameworks */,
+				E7127B7BA8BE7CB68FBC4882579C83C0 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5E158195978A010AB058B0DA2D24EA43 /* PBXTargetDependency */,
+			);
+			name = "Pods-PinchableImageView_Tests";
+			productName = "Pods-PinchableImageView_Tests";
+			productReference = A00E36349CF97C3A96E89F737DFF8A26 /* Pods_PinchableImageView_Tests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		8D9DFBDF0BE4E8740EAB25927FD4012B /* PinchableImageView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4F2828DBF64D380B7D308C8FA8D88210 /* Build configuration list for PBXNativeTarget "PinchableImageView" */;
+			buildPhases = (
+				13030EA920CDAF911B47D82C00FA091B /* Sources */,
+				11C6A11AB7C89BD0285A4F7E4E77D763 /* Frameworks */,
+				87CD2E16ACE897CEC3D41933F546C410 /* Resources */,
+				47E58EA0CC1135713D98E782AE2E0BD5 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D3F7958BE28D9BCA839F2CEB103A39F5 /* PBXTargetDependency */,
+			);
+			name = PinchableImageView;
+			productName = PinchableImageView;
+			productReference = 0E674991D0941079A2019CBFD8362409 /* PinchableImageView.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		969798E12D5EC31276654382E296DE74 /* Pods-PinchableImageView_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 55A8E12763DFD3C752994714576D63BF /* Build configuration list for PBXNativeTarget "Pods-PinchableImageView_Example" */;
+			buildPhases = (
+				AF74F0081C3BC284E8CB3377C805E70A /* Sources */,
+				DE4BF5659750DCF90B4BBA464BABC1A2 /* Frameworks */,
+				A26369C2C2887E2E72E972D096A9406D /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8BCD5524674ABB9BD84EF14C35651CB1 /* PBXTargetDependency */,
+			);
+			name = "Pods-PinchableImageView_Example";
+			productName = "Pods-PinchableImageView_Example";
+			productReference = B430932CA2482A9BE76F22B18AEB9E8B /* Pods_PinchableImageView_Example.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = FDAC61579D742C1743CD22C54A4923CB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8D9DFBDF0BE4E8740EAB25927FD4012B /* PinchableImageView */,
+				05E09F6C685101EF538504F090B32A6D /* PinchableImageView-PinchableImageView */,
+				969798E12D5EC31276654382E296DE74 /* Pods-PinchableImageView_Example */,
+				497E38B860CDA80207D66B11E3326159 /* Pods-PinchableImageView_Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		56DA48C97D4BE07BEB1EC7C1B019C9AE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		87CD2E16ACE897CEC3D41933F546C410 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4BB9CDC16382D3ECB4769637050EED23 /* PinchableImageView.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		13030EA920CDAF911B47D82C00FA091B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				119FAF701F9F253D686C1C2510FB46F9 /* PinchableImageView-dummy.m in Sources */,
+				17206FE27E3DE93B430327F097679187 /* PinchableImageView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B31CEB8B6C4166E005A4BBD511BB5CD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3CE5602EDFDE7E61CA18ED0C5048E7FC /* Pods-PinchableImageView_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF74F0081C3BC284E8CB3377C805E70A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D7091A22EA6069E0214038985BC716A /* Pods-PinchableImageView_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EECD573D44F13A78CEC85374B720E0F1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5E158195978A010AB058B0DA2D24EA43 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = PinchableImageView;
+			target = 8D9DFBDF0BE4E8740EAB25927FD4012B /* PinchableImageView */;
+			targetProxy = AA29977FBBB8715F618FC6B73BF43B68 /* PBXContainerItemProxy */;
+		};
+		8BCD5524674ABB9BD84EF14C35651CB1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = PinchableImageView;
+			target = 8D9DFBDF0BE4E8740EAB25927FD4012B /* PinchableImageView */;
+			targetProxy = CC1F96D6BE0FF1E08777E0B2F5313753 /* PBXContainerItemProxy */;
+		};
+		D3F7958BE28D9BCA839F2CEB103A39F5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "PinchableImageView-PinchableImageView";
+			target = 05E09F6C685101EF538504F090B32A6D /* PinchableImageView-PinchableImageView */;
+			targetProxy = 4D9F5B456584162535C12731071CB9F6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0246A3415EBD4CC8C4F5654EB8DC205D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 541F1434BEC3AAEE91E89C51AB592716 /* Pods-PinchableImageView_Tests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-PinchableImageView_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-PinchableImageView_Tests/Pods-PinchableImageView_Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_PinchableImageView_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		10DE1947DAC0ED28F6C0A9F9BD75D546 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2F1296A5B185ACE73C7A6473071D2660 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 92B97CFA4D93F0F1AAE849DA6D9982EC /* PinchableImageView.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				PRODUCT_NAME = PinchableImageView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		552D02D5BA751AC2E8790D2811D496CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		5CE76938599DD49C3EA0D1908A33FB27 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 92B97CFA4D93F0F1AAE849DA6D9982EC /* PinchableImageView.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/PinchableImageView/PinchableImageView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PinchableImageView/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/PinchableImageView/PinchableImageView.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = PinchableImageView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		847878FF28B4009C1752A75DFF2911A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2EFF71B60C18C3370EF544F71F39E244 /* Pods-PinchableImageView_Example.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-PinchableImageView_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-PinchableImageView_Example/Pods-PinchableImageView_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_PinchableImageView_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		A10BA1FE88CFB228DB855B07B7DAE9CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 92B97CFA4D93F0F1AAE849DA6D9982EC /* PinchableImageView.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				PRODUCT_NAME = PinchableImageView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		A4E065E6E190B120184AC716605CDC5A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5D290798A7F3E6306BE89215E10CDAEB /* Pods-PinchableImageView_Example.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-PinchableImageView_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-PinchableImageView_Example/Pods-PinchableImageView_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_PinchableImageView_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		BD5080E1C085075AE7A81850FE896FA7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6ADECCB805AF4CDCAAB76A4FCC548127 /* Pods-PinchableImageView_Tests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-PinchableImageView_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-PinchableImageView_Tests/Pods-PinchableImageView_Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_PinchableImageView_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		F75836E5A5C0F88181DEA550D528C2AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 92B97CFA4D93F0F1AAE849DA6D9982EC /* PinchableImageView.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/PinchableImageView/PinchableImageView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PinchableImageView/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/PinchableImageView/PinchableImageView.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = PinchableImageView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				552D02D5BA751AC2E8790D2811D496CA /* Debug */,
+				10DE1947DAC0ED28F6C0A9F9BD75D546 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		39ACCDB15273181D9FD0A9CCBCB19B7A /* Build configuration list for PBXNativeTarget "Pods-PinchableImageView_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BD5080E1C085075AE7A81850FE896FA7 /* Debug */,
+				0246A3415EBD4CC8C4F5654EB8DC205D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4F2828DBF64D380B7D308C8FA8D88210 /* Build configuration list for PBXNativeTarget "PinchableImageView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F75836E5A5C0F88181DEA550D528C2AB /* Debug */,
+				5CE76938599DD49C3EA0D1908A33FB27 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		55A8E12763DFD3C752994714576D63BF /* Build configuration list for PBXNativeTarget "Pods-PinchableImageView_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A4E065E6E190B120184AC716605CDC5A /* Debug */,
+				847878FF28B4009C1752A75DFF2911A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A008233BE6EC5B588A92E0CF713EF685 /* Build configuration list for PBXNativeTarget "PinchableImageView-PinchableImageView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A10BA1FE88CFB228DB855B07B7DAE9CA /* Debug */,
+				2F1296A5B185ACE73C7A6473071D2660 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

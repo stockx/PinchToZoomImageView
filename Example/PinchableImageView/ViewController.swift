@@ -7,18 +7,31 @@
 //
 
 import UIKit
+import PinchableImageView
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, PinchableImageViewDelegate {
+  override func viewDidAppear(animated: Bool) {
+    super.viewDidAppear(animated)
+    let imageView = PinchableImageView()
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
+    imageView.image = UIImage(named: "lena")!
+    imageView.sizeToFit()
+    imageView.center = view.center
+    view.addSubview(imageView)
+    
+    imageView.delegate = self
+  }
+  
+  func pinchableImageViewTouchesBegan(pinchableImageView: PinchableImageView, touches: Set<UITouch>, withEvent event: UIEvent?) {
+    print("began delegate")
+  }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+  func pinchableImageViewTouchesMoved(pinchableImageView: PinchableImageView, touches: Set<UITouch>, withEvent event: UIEvent?) {
+    print("moved delegate")
+  }
 
+  func pinchableImageViewTouchesEnded(pinchableImageView: PinchableImageView, touches: Set<UITouch>, withEvent event: UIEvent?) {
+    print("ended delegate")
+  }
 }
 

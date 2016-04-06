@@ -1,0 +1,6 @@
+framework module Pods_PinchableImageView_Example {
+  umbrella header "Pods-PinchableImageView_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

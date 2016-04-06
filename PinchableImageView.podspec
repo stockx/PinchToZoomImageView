@@ -9,22 +9,16 @@
 Pod::Spec.new do |s|
   s.name             = "PinchableImageView"
   s.version          = "0.1.0"
-  s.summary          = "A short description of PinchableImageView."
+  s.summary          = "You can pinch an imageView."
 
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!  
   s.description      = <<-DESC
+You can rotate and scale this imageView by pinching.
                        DESC
 
-  s.homepage         = "https://github.com/<GITHUB_USERNAME>/PinchableImageView"
-  # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
+  s.homepage         = "https://github.com/malt03/PinchableImageView"
   s.license          = 'MIT'
-  s.author           = { "Koji Murata" => "koji.murata@dena.com" }
-  s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/PinchableImageView.git", :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.author           = { "Koji Murata" => "malt.koji@gmail.com" }
+  s.source           = { :git => "https://github.com/malt03/PinchableImageView.git", :tag => s.version.to_s }
 
   s.platform     = :ios, '8.0'
   s.requires_arc = true
@@ -33,8 +27,4 @@ Pod::Spec.new do |s|
   s.resource_bundles = {
     'PinchableImageView' => ['Pod/Assets/*.png']
   }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end

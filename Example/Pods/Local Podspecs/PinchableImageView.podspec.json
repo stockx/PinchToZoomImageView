@@ -1,0 +1,25 @@
+{
+  "name": "PinchableImageView",
+  "version": "0.1.0",
+  "summary": "A short description of PinchableImageView.",
+  "description": "",
+  "homepage": "https://github.com/<GITHUB_USERNAME>/PinchableImageView",
+  "license": "MIT",
+  "authors": {
+    "Koji Murata": "koji.murata@dena.com"
+  },
+  "source": {
+    "git": "https://github.com/<GITHUB_USERNAME>/PinchableImageView.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "requires_arc": true,
+  "source_files": "Pod/Classes/**/*",
+  "resource_bundles": {
+    "PinchableImageView": [
+      "Pod/Assets/*.png"
+    ]
+  }
+}

@@ -1,0 +1,6 @@
+framework module PinchableImageView {
+  umbrella header "PinchableImageView-umbrella.h"
+
+  export *
+  module * { export * }
+}

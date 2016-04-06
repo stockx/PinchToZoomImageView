@@ -1,0 +1,14 @@
+PODS:
+  - PinchableImageView (0.1.0)
+
+DEPENDENCIES:
+  - PinchableImageView (from `../`)
+
+EXTERNAL SOURCES:
+  PinchableImageView:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  PinchableImageView: 99dd05c0611574be894f61d4b9ff69ee994ad25c
+
+COCOAPODS: 0.39.0
