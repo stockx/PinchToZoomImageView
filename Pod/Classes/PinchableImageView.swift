@@ -35,6 +35,47 @@ public class PinchableImageView: UIImageView {
     multipleTouchEnabled = true
   }
   
+  public enum Corner {
+    case LeftTop
+    case RightTop
+    case LeftBottom
+    case RightBottom
+  }
+  
+  public func setCornerMode(corners: [Corner], image: UIImage) {
+    addImageViews(corners, image: image)
+  }
+  
+  private func addImageViews(corners: [Corner], image: UIImage) {
+    for corner in corners {
+      let imageView = UIImageView(image: image)
+      imageView.sizeToFit()
+      setCornerImageViewPoint(imageView, corner: corner)
+      superview?.insertSubview(imageView, aboveSubview: self)
+      cornerImageViews[corner] = imageView
+    }
+  }
+  
+  private func updateImageViewsPointAndRotate() {
+    for (corner, imageView) in cornerImageViews {
+      setCornerImageViewPoint(imageView, corner: corner)
+      imageView.transform = lastRotateTransform
+    }
+  }
+  
+  private func setCornerImageViewPoint(imageView: UIImageView, corner: Corner) {
+    let point: CGPoint
+    switch corner {
+    case .LeftTop:     point = CGPoint(x: 0, y: 0)
+    case .RightTop:    point = CGPoint(x: bounds.width, y: 0)
+    case .LeftBottom:  point = CGPoint(x: 0, y: bounds.height)
+    case .RightBottom: point = CGPoint(x: bounds.width, y: bounds.height)
+    }
+    imageView.center = convertPoint(point, toView: superview)
+  }
+  
+  private var cornerImageViews = [Corner: UIImageView]()
+  
   required public init?(coder aDecoder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
@@ -106,6 +147,7 @@ public class PinchableImageView: UIImageView {
     if !lockOriginY { center.y = c.y }
     
     delegate?.pinchableImageViewTouchesMoved?(self, touches: touches, withEvent: event)
+    updateImageViewsPointAndRotate()
   }
   
   override public func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {

@@ -18,6 +18,7 @@ class ViewController: UIViewController, PinchableImageViewDelegate {
     imageView.sizeToFit()
     imageView.center = view.center
     view.addSubview(imageView)
+    imageView.setCornerMode([.LeftTop], image: UIImage(named: "rotate")!)
     
     imageView.delegate = self
   }
