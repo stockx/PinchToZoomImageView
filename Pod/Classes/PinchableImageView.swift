@@ -23,7 +23,7 @@ public class PinchableImageView: UIImageView {
   public var lockOriginX = false
   public var lockOriginY = false
   
-  public var delegate: PinchableImageViewDelegate?
+  public weak var delegate: PinchableImageViewDelegate?
   
   convenience public init() {
     self.init(frame: .zero)
