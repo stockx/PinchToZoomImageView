@@ -46,14 +46,25 @@ public class PinchableImageView: UIImageView {
     positioning = p
     for (corner, view) in cornerViews {
       view.userInteractionEnabled = true
-      setCornerImageViewPoint(view, corner: corner)
-      superview?.insertSubview(view, aboveSubview: self)
       self.cornerViews[corner] = view
       if panEnabled {
         let pan = UIPanGestureRecognizer(target: self, action: #selector(self.cornerPanned(_:)))
         view.addGestureRecognizer(pan)
       }
       handler?(addedView: view, corner: corner, pinchableImageView: self)
+    }
+  }
+  
+  public func showCornerViews() {
+    for (corner, view) in cornerViews {
+      setCornerImageViewPoint(view, corner: corner)
+      superview?.insertSubview(view, aboveSubview: self)
+    }
+  }
+  
+  public func hideCornerViews() {
+    for (_, view) in cornerViews {
+      view.removeFromSuperview()
     }
   }
   

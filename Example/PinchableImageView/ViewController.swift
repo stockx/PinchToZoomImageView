@@ -10,9 +10,10 @@ import UIKit
 import PinchableImageView
 
 class ViewController: UIViewController, PinchableImageViewDelegate {
+  private let imageView = PinchableImageView()
+  
   override func viewDidAppear(animated: Bool) {
     super.viewDidAppear(animated)
-    let imageView = PinchableImageView()
 
     imageView.image = UIImage(named: "lena")!
     imageView.sizeToFit()
@@ -25,8 +26,12 @@ class ViewController: UIViewController, PinchableImageViewDelegate {
     imageView.delegate = self
   }
   
+  @IBAction func touchDownBackground() {
+    imageView.hideCornerViews()
+  }
+
   func pinchableImageViewTouchesBegan(pinchableImageView: PinchableImageView, touches: Set<UITouch>, withEvent event: UIEvent?) {
-    print("began delegate")
+    pinchableImageView.showCornerViews()
   }
 
   func pinchableImageViewTouchesMoved(pinchableImageView: PinchableImageView, touches: Set<UITouch>, withEvent event: UIEvent?) {
