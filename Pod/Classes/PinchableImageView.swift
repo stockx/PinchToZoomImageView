@@ -160,6 +160,7 @@ extension PinchableImageView {
       activeLocations.removeValueForKey(cornerKey)
       activeLocations.removeValueForKey(centerKey)
       touchesEnded([cornerKey, centerKey])
+      panningRecognizer = nil
     default:
       break
     }
