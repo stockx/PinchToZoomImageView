@@ -19,9 +19,13 @@ class ViewController: UIViewController, PinchableImageViewDelegate {
     imageView.sizeToFit()
     imageView.center = view.center
     view.addSubview(imageView)
-    let iview = UIImageView(image: UIImage(named: "rotate")!)
-    iview.sizeToFit()
-    imageView.addCornerViews([.LeftTop: iview], positioning: CGPoint(x: -10, y: -10))
+    
+    func v() -> UIView {
+      let iview = UIImageView(image: UIImage(named: "arrow")!)
+      iview.sizeToFit()
+      return iview
+    }
+    imageView.addCornerViews([.LeftBottom: v(), .RightTop: v(), .RightBottom: v()], positioning: CGPoint(x: -10, y: -10))
     
     imageView.delegate = self
   }
