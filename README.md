@@ -19,6 +19,16 @@ imageView.center = view.center
 view.addSubview(imageView)
 ```
 
+### Initialize corner views for rotate
+```swift
+imageView.addCornerViews([.LeftTop: cornerView])
+```
+
+### Initialize corner views without rotate
+```swift
+imageView.addCornerViews([.LeftTop: cornerView], panEnabled: false)
+```
+
 ### Delegate
 ```swift
 protocol PinchableImageViewDelegate {
