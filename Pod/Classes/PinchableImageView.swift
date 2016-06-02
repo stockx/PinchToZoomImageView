@@ -67,17 +67,38 @@ public class PinchableImageView: UIImageView {
       view.removeFromSuperview()
     }
   }
+
+  private var beginPanRotate = CGFloat(0)
+  private var panPointAdjustment = CGPoint.zero
   
   @objc private func cornerPanned(recognizer: UIPanGestureRecognizer) {
     let cornerKey = "corner"
     let centerKey = "center"
-    activeLocations[cornerKey] = recognizer.locationInView(self)
-
+    
+    var corner: Corner?
+    for (c, v) in cornerViews {
+      if recognizer.view == v { corner = c }
+    }
+    guard let c = corner else { return }
+    
+    let panPointInSuperview = recognizer.locationInView(superview)
     switch recognizer.state {
     case .Began:
-      activeLocations[centerKey] = CGPoint(x: bounds.width / 2, y: bounds.height / 2)
+      let point = convertPoint(cornerPoint(c, isPositioning: false), toView: superview)
+      let centerPoint = convertPoint(CGPoint(x: bounds.width / 2, y: bounds.height / 2), toView: superview)
+      panPointAdjustment = panPointInSuperview - point
+      activeLocations[cornerKey] = point
+      activeLocations[centerKey] = centerPoint
+
       touchesBegan([cornerKey, centerKey])
+
+      let diff = panPointInSuperview - centerPoint
+      beginPanRotate = atan2(diff.x, diff.y)
     case .Changed:
+      let centerPoint = activeLocations[centerKey]!
+      let diff = panPointInSuperview - centerPoint
+      let panRotate = atan2(diff.x, diff.y)
+      activeLocations[cornerKey] = panPointInSuperview - CGPointApplyAffineTransform(panPointAdjustment, CGAffineTransformMakeRotation(beginPanRotate - panRotate))
       touchesMoved()
     case .Ended, .Cancelled:
       activeLocations.removeValueForKey(cornerKey)
@@ -88,24 +109,32 @@ public class PinchableImageView: UIImageView {
     }
   }
   
+  private var rotateTransform: CGAffineTransform {
+    return CGAffineTransformConcat(beginTransform, lastRotateTransform)
+  }
+  
   private func updateImageViewsPointAndRotate() {
     for (corner, imageView) in cornerViews {
       setCornerImageViewPoint(imageView, corner: corner)
-      imageView.transform = CGAffineTransformConcat(beginTransform, lastRotateTransform)
+      imageView.transform = rotateTransform
     }
   }
   
   private var positioning = CGPoint.zero
   
   private func setCornerImageViewPoint(view: UIView, corner: Corner) {
+    view.center = convertPoint(cornerPoint(corner, isPositioning: true), toView: superview)
+  }
+  
+  private func cornerPoint(corner: Corner, isPositioning: Bool) -> CGPoint {
     let point: CGPoint
+    let applyPositioning = isPositioning ? positioning / lastScale : .zero
     switch corner {
-    case .LeftTop:     point = CGPoint(x: positioning.x,                y: positioning.y)
-    case .RightTop:    point = CGPoint(x: bounds.width - positioning.x, y: positioning.y)
-    case .LeftBottom:  point = CGPoint(x: positioning.x,                y: bounds.height - positioning.y)
-    case .RightBottom: point = CGPoint(x: bounds.width - positioning.x, y: bounds.height - positioning.y)
+    case .LeftTop:     return CGPoint(x: applyPositioning.x,                y: applyPositioning.y)
+    case .RightTop:    return CGPoint(x: bounds.width - applyPositioning.x, y: applyPositioning.y)
+    case .LeftBottom:  return CGPoint(x: applyPositioning.x,                y: bounds.height - applyPositioning.y)
+    case .RightBottom: return CGPoint(x: bounds.width - applyPositioning.x, y: bounds.height - applyPositioning.y)
     }
-    view.center = convertPoint(point, toView: superview)
   }
   
   private var cornerViews = [Corner: UIView]()
@@ -139,7 +168,7 @@ public class PinchableImageView: UIImageView {
   }
   private func updateActiveLocationsFromTouches() {
     for t in activeTouches {
-      activeLocations[t] = t.locationInView(self)
+      activeLocations[t] = t.locationInView(superview)
     }
   }
   
@@ -147,7 +176,7 @@ public class PinchableImageView: UIImageView {
     var keys = [UITouch]()
     for t in touches {
       activeTouches.append(t)
-      activeLocations[t] = t.locationInView(self)
+      activeLocations[t] = t.locationInView(superview)
       keys.append(t)
     }
 
@@ -179,7 +208,7 @@ public class PinchableImageView: UIImageView {
     activeLocationKeys += keys
     
     let transform = CGAffineTransformTranslateWithSize(self.transform, -bounds.size / 2)
-    let location0 = CGPointApplyAffineTransform(activeLocation(0), transform)
+    let location0 = CGPointApplyAffineTransform(convertPoint(activeLocation(0), fromView: superview), transform)
     
     beginSize = bounds.size
     beginTransform = endRotateTransform
@@ -189,18 +218,18 @@ public class PinchableImageView: UIImageView {
     if activeLocationKeys.count == 1 {
       beginCenter = location0
     } else if lastActiveTouchesCount < 2 && activeLocationKeys.count >= 2 {
-      let location1 = CGPointApplyAffineTransform(activeLocation(1), transform)
+      let location1 = CGPointApplyAffineTransform(convertPoint(activeLocation(1), fromView: superview), transform)
       (beginDistance, beginRadian, beginCenter) = distanceRadianAndCenter(location0, location1)
     }
   }
   
   private func touchesMoved() {
-    let location0 = convertPoint(activeLocation(0), toView: superview)
+    let location0 = activeLocation(0)
     let c: CGPoint
     if activeLocationKeys.count == 1 {
       c = location0 - beginCenter
     } else {
-      let location1 = convertPoint(activeLocation(1), toView: superview)
+      let location1 = activeLocation(1)
       let (distance, radian, location) = distanceRadianAndCenter(location0, location1)
       let scale = lockScale ? 1 : distance / beginDistance
       
@@ -236,7 +265,7 @@ public class PinchableImageView: UIImageView {
       if activeLocationKeys.count == 1 {
         updateActiveLocationsFromTouches()
         let transform = CGAffineTransformTranslateWithSize(self.transform, -bounds.size / 2)
-        beginCenter = CGPointApplyAffineTransform(activeLocation(0), transform)
+        beginCenter = CGPointApplyAffineTransform(convertPoint(activeLocation(0), fromView: superview), transform)
       }
     }
   }
@@ -249,10 +278,10 @@ public class PinchableImageView: UIImageView {
   override public func pointInside(point: CGPoint, withEvent event: UIEvent?) -> Bool {
     if activeLocationKeys.count > 0 { return true }
     var rect = bounds
-    rect.origin.x += tappableInset.left / endScale
-    rect.origin.y += tappableInset.top / endScale
-    rect.size.width -= (tappableInset.left + tappableInset.right) / endScale
-    rect.size.height -= (tappableInset.top + tappableInset.bottom) / endScale
+    rect.origin.x += tappableInset.left
+    rect.origin.y += tappableInset.top
+    rect.size.width -= (tappableInset.left + tappableInset.right)
+    rect.size.height -= (tappableInset.top + tappableInset.bottom)
     return CGRectContainsPoint(rect, point)
   }
 }
