@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "510B3DA621C37D6ACE9BC74A402C5DFD8A9830CD",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "510B3DA621C37D6ACE9BC74A402C5DFD8A9830CD" : 0,
+    "21A1EDB43247AF9F2F4E4DC52B61AD47DEF08824" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "448CCF9E-BC1D-4095-921A-6E06C5607781",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "510B3DA621C37D6ACE9BC74A402C5DFD8A9830CD" : "PinchableImageView\/",
+    "21A1EDB43247AF9F2F4E4DC52B61AD47DEF08824" : "PinchableImageView\/KTouchPointerWindow\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "PinchableImageView",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Example\/PinchableImageView.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:itok\/KTouchPointerWindow.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "21A1EDB43247AF9F2F4E4DC52B61AD47DEF08824"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:malt03\/PinchableImageView.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "510B3DA621C37D6ACE9BC74A402C5DFD8A9830CD"
+    }
+  ]
+}
