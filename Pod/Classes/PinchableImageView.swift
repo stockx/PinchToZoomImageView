@@ -91,7 +91,7 @@ public class PinchableImageView: UIImageView {
   private func updateImageViewsPointAndRotate() {
     for (corner, imageView) in cornerViews {
       setCornerImageViewPoint(imageView, corner: corner)
-      imageView.transform = lastRotateTransform
+      imageView.transform = CGAffineTransformConcat(beginTransform, lastRotateTransform)
     }
   }
   
