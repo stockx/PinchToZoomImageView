@@ -16,6 +16,7 @@ You can rotate and scale this imageView by pinching.
                        DESC
 
   s.homepage         = "https://github.com/malt03/PinchableImageView"
+  s.screenshots      = "https://raw.githubusercontent.com/malt03/PinchableImageView/master/Screenshot.gif"
   s.license          = 'MIT'
   s.author           = { "Koji Murata" => "malt.koji@gmail.com" }
   s.source           = { :git => "https://github.com/malt03/PinchableImageView.git", :tag => s.version.to_s }
