@@ -6,6 +6,8 @@
 [![CocoaPods](https://img.shields.io/cocoapods/v/PinchableImageView.svg?style=flat)](http://cocoapods.org/pods/PinchableImageView)
 ![License](https://img.shields.io/github/license/malt03/PinchableImageView.svg?style=flat)
 
+![Screen Shot](https://raw.githubusercontent.com/malt03/PinchableImageView/master/Screenshot.gif)
+
 ## Usage
 
 ### Initialize
