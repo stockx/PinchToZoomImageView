@@ -25,7 +25,4 @@ You can rotate and scale this imageView by pinching.
   s.requires_arc = true
 
   s.source_files = 'Pod/Classes/**/*'
-  s.resource_bundles = {
-    'PinchableImageView' => ['Pod/Assets/*.png']
-  }
 end
