@@ -1,0 +1,3 @@
+[submodule "KTouchPointerWindow"]
+	path = KTouchPointerWindow
+	url = git@github.com:itok/KTouchPointerWindow.git
