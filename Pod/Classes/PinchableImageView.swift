@@ -46,6 +46,7 @@ public class PinchableImageView: UIImageView {
   public func addCornerViews(cornerViews: [Corner: UIView], positioning p: CGPoint = .zero, panEnabled: Bool = true, handler: ((addedView: UIView, corner: Corner, pinchableImageView: PinchableImageView) -> Void)? = nil) {
     positioning = p
     for (corner, view) in cornerViews {
+      self.cornerViews[corner]?.removeFromSuperview()
       view.userInteractionEnabled = true
       self.cornerViews[corner] = view
       if panEnabled {
@@ -329,6 +330,17 @@ extension PinchableImageView {
     rect.size.width -= (tappableInset.left + tappableInset.right)
     rect.size.height -= (tappableInset.top + tappableInset.bottom)
     return CGRectContainsPoint(rect, point)
+  }
+}
+
+// MARK: - for subviews
+
+extension PinchableImageView {
+  public override func removeFromSuperview() {
+    super.removeFromSuperview()
+    for (_, view) in cornerViews {
+      view.removeFromSuperview()
+    }
   }
 }
 

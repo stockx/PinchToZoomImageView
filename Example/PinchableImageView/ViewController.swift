@@ -18,16 +18,25 @@ class ViewController: UIViewController, PinchableImageViewDelegate {
     imageView.image = UIImage(named: "lena")!
     imageView.sizeToFit()
     imageView.center = view.center
-    view.addSubview(imageView)
-    
     func v() -> UIView {
       let iview = UIImageView(image: UIImage(named: "arrow")!)
       iview.frame.size = CGSize(width: 40, height: 40)
       return iview
     }
+    let removeButton = UIButton(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+    removeButton.backgroundColor = .redColor()
+    removeButton.addTarget(self, action: #selector(remove), forControlEvents: .TouchUpInside)
+    
     imageView.addCornerViews([.LeftBottom: v(), .RightTop: v(), .RightBottom: v()], positioning: CGPoint(x: -10, y: -10))
+    imageView.addCornerViews([.LeftTop: removeButton], positioning: .zero, panEnabled: false)
     
     imageView.delegate = self
+    
+    view.addSubview(imageView)
+  }
+  
+  @objc private func remove() {
+    imageView.removeFromSuperview()
   }
   
   @IBAction func touchDownBackground() {
@@ -39,11 +48,11 @@ class ViewController: UIViewController, PinchableImageViewDelegate {
   }
 
   func pinchableImageViewTouchesMoved(pinchableImageView: PinchableImageView, touches: Set<UITouch>, withEvent event: UIEvent?) {
-    print("moved delegate")
+
   }
 
   func pinchableImageViewTouchesEnded(pinchableImageView: PinchableImageView, touches: Set<UITouch>, withEvent event: UIEvent?) {
-    print("ended delegate")
+
   }
 }
 
