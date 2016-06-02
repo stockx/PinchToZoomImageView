@@ -50,10 +50,22 @@ public class PinchableImageView: UIImageView {
     for corner in corners {
       let imageView = UIImageView(image: image)
       imageView.sizeToFit()
+      imageView.userInteractionEnabled = true
+      let pan = UIPanGestureRecognizer(target: self, action: #selector(cornerPanned(_:)))
+      imageView.addGestureRecognizer(pan)
       setCornerImageViewPoint(imageView, corner: corner)
       superview?.insertSubview(imageView, aboveSubview: self)
       cornerImageViews[corner] = imageView
     }
+  }
+  
+  @objc private func cornerPanned(recognizer: UIPanGestureRecognizer) {
+//    switch recognizer.state {
+//    case .Began:
+//      <#code#>
+//    default:
+//      <#code#>
+//    }
   }
   
   private func updateImageViewsPointAndRotate() {
@@ -99,37 +111,75 @@ public class PinchableImageView: UIImageView {
   
   private var activeTouches = [UITouch]()
   
+  private var activeLocations = [NSObject: CGPoint]()
+  private var activeLocationKeys = [NSObject]()
+  private func activeLocation(index: Int) -> CGPoint {
+    return activeLocations[activeLocationKeys[index]]!
+  }
+  private func updateActiveLocationsFromTouches() {
+    for t in activeTouches {
+      activeLocations[t] = t.locationInView(self)
+    }
+  }
+  
   override public func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-    let lastActiveTouchesCount = activeTouches.count
+    var keys = [UITouch]()
     for t in touches {
       activeTouches.append(t)
+      activeLocations[t] = t.locationInView(self)
+      keys.append(t)
+    }
+
+    touchesBegan(keys)
+    delegate?.pinchableImageViewTouchesBegan?(self, touches: touches, withEvent: event)
+  }
+  
+  override public func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    updateActiveLocationsFromTouches()
+
+    touchesMoved()
+    
+    delegate?.pinchableImageViewTouchesMoved?(self, touches: touches, withEvent: event)
+  }
+  
+  override public func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    for t in touches {
+      activeLocations[t] = t.locationInView(self)
+      activeTouches.removeAtIndex(activeTouches.indexOf(t)!)
     }
     
+    touchesEnded(touches)
+    
+    delegate?.pinchableImageViewTouchesEnded?(self, touches: touches, withEvent: event)
+  }
+  
+  private func touchesBegan(keys: [NSObject]) {
+    let lastActiveTouchesCount = activeLocationKeys.count
+    activeLocationKeys += keys
+    
     let transform = CGAffineTransformTranslateWithSize(self.transform, -bounds.size / 2)
-    let location0 = CGPointApplyAffineTransform(activeTouches[0].locationInView(self), transform)
+    let location0 = CGPointApplyAffineTransform(activeLocation(0), transform)
     
     beginSize = bounds.size
     beginTransform = endRotateTransform
     lastRotateTransform = CGAffineTransformIdentity
     lastScale = endScale
     
-    if activeTouches.count == 1 {
+    if activeLocationKeys.count == 1 {
       beginCenter = location0
-    } else if lastActiveTouchesCount < 2 && activeTouches.count >= 2 {
-      let location1 = CGPointApplyAffineTransform(activeTouches[1].locationInView(self), transform)
+    } else if lastActiveTouchesCount < 2 && activeLocationKeys.count >= 2 {
+      let location1 = CGPointApplyAffineTransform(activeLocation(1), transform)
       (beginDistance, beginRadian, beginCenter) = distanceRadianAndCenter(location0, location1)
     }
-    
-    delegate?.pinchableImageViewTouchesBegan?(self, touches: touches, withEvent: event)
   }
   
-  override public func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
-    let location0 = activeTouches[0].locationInView(superview)
+  private func touchesMoved() {
+    let location0 = convertPoint(activeLocation(0), toView: superview)
     let c: CGPoint
-    if activeTouches.count == 1 {
+    if activeLocationKeys.count == 1 {
       c = location0 - beginCenter
     } else {
-      let location1 = activeTouches[1].locationInView(superview)
+      let location1 = convertPoint(activeLocation(1), toView: superview)
       let (distance, radian, location) = distanceRadianAndCenter(location0, location1)
       let scale = lockScale ? 1 : distance / beginDistance
       
@@ -146,29 +196,28 @@ public class PinchableImageView: UIImageView {
     if !lockOriginX { center.x = c.x }
     if !lockOriginY { center.y = c.y }
     
-    delegate?.pinchableImageViewTouchesMoved?(self, touches: touches, withEvent: event)
     updateImageViewsPointAndRotate()
   }
   
-  override public func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
-    for t in touches {
-      activeTouches.removeAtIndex(activeTouches.indexOf(t)!)
+  private func touchesEnded(keys: Set<NSObject>) {
+    for k in keys {
+      activeLocations.removeValueForKey(k)
+      activeLocationKeys.removeAtIndex(activeLocationKeys.indexOf(k)!)
     }
-    if activeTouches.count < 2 {
+    if activeLocationKeys.count < 2 {
       endRotateTransform = CGAffineTransformConcat(beginTransform, lastRotateTransform)
       
       bounds.size = beginSize * lastScale
-
+      
       endScale = 1
       self.transform = endRotateTransform
       
-      if activeTouches.count == 1 {
+      if activeLocationKeys.count == 1 {
+        updateActiveLocationsFromTouches()
         let transform = CGAffineTransformTranslateWithSize(self.transform, -bounds.size / 2)
-        beginCenter = CGPointApplyAffineTransform(activeTouches[0].locationInView(self), transform)
+        beginCenter = CGPointApplyAffineTransform(activeLocation(0), transform)
       }
     }
-    
-    delegate?.pinchableImageViewTouchesEnded?(self, touches: touches, withEvent: event)
   }
   
   public override func touchesCancelled(touches: Set<UITouch>?, withEvent event: UIEvent?) {
@@ -177,7 +226,7 @@ public class PinchableImageView: UIImageView {
   }
   
   override public func pointInside(point: CGPoint, withEvent event: UIEvent?) -> Bool {
-    if activeTouches.count > 0 { return true }
+    if activeLocationKeys.count > 0 { return true }
     var rect = bounds
     rect.origin.x += tappableInset.left / endScale
     rect.origin.y += tappableInset.top / endScale
