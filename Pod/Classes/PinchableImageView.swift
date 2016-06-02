@@ -42,30 +42,49 @@ public class PinchableImageView: UIImageView {
     case RightBottom
   }
   
-  public func setCornerMode(corners: [Corner], image: UIImage) {
-    addImageViews(corners, image: image)
+  public func addCornerPan(corners: [Corner], image: UIImage) {
+    addImageViews(corners, image: image) { (imageView) in
+      let pan = UIPanGestureRecognizer(target: self, action: #selector(self.cornerPanned(_:)))
+      imageView.addGestureRecognizer(pan)
+    }
   }
   
-  private func addImageViews(corners: [Corner], image: UIImage) {
+  public func addCornerHandler(corners: [Corner], image: UIImage, handler: ((cornerImageView: UIImageView, pinchableImageView: PinchableImageView) -> Void)) {
+    addImageViews(corners, image: image) { (imageView) in
+      handler(cornerImageView: imageView, pinchableImageView: self)
+    }
+  }
+  
+  private func addImageViews(corners: [Corner], image: UIImage, handler: ((imageView: UIImageView) -> Void)) {
     for corner in corners {
       let imageView = UIImageView(image: image)
       imageView.sizeToFit()
       imageView.userInteractionEnabled = true
-      let pan = UIPanGestureRecognizer(target: self, action: #selector(cornerPanned(_:)))
-      imageView.addGestureRecognizer(pan)
       setCornerImageViewPoint(imageView, corner: corner)
       superview?.insertSubview(imageView, aboveSubview: self)
       cornerImageViews[corner] = imageView
+      handler(imageView: imageView)
     }
   }
   
   @objc private func cornerPanned(recognizer: UIPanGestureRecognizer) {
-//    switch recognizer.state {
-//    case .Began:
-//      <#code#>
-//    default:
-//      <#code#>
-//    }
+    let cornerKey = "corner"
+    let centerKey = "center"
+    activeLocations[cornerKey] = recognizer.locationInView(self)
+
+    switch recognizer.state {
+    case .Began:
+      activeLocations[centerKey] = CGPoint(x: bounds.width / 2, y: bounds.height / 2)
+      touchesBegan([cornerKey, centerKey])
+    case .Changed:
+      touchesMoved()
+    case .Ended, .Cancelled:
+      activeLocations.removeValueForKey(cornerKey)
+      activeLocations.removeValueForKey(centerKey)
+      touchesEnded([cornerKey, centerKey])
+    default:
+      break
+    }
   }
   
   private func updateImageViewsPointAndRotate() {
@@ -144,7 +163,7 @@ public class PinchableImageView: UIImageView {
   
   override public func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
     for t in touches {
-      activeLocations[t] = t.locationInView(self)
+      activeLocations.removeValueForKey(t)
       activeTouches.removeAtIndex(activeTouches.indexOf(t)!)
     }
     
@@ -201,7 +220,6 @@ public class PinchableImageView: UIImageView {
   
   private func touchesEnded(keys: Set<NSObject>) {
     for k in keys {
-      activeLocations.removeValueForKey(k)
       activeLocationKeys.removeAtIndex(activeLocationKeys.indexOf(k)!)
     }
     if activeLocationKeys.count < 2 {
