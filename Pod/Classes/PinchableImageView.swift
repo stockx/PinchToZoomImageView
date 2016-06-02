@@ -42,28 +42,18 @@ public class PinchableImageView: UIImageView {
     case RightBottom
   }
   
-  public func addCornerPan(corners: [Corner], image: UIImage) {
-    addImageViews(corners, image: image) { (imageView) in
-      let pan = UIPanGestureRecognizer(target: self, action: #selector(self.cornerPanned(_:)))
-      imageView.addGestureRecognizer(pan)
-    }
-  }
-  
-  public func addCornerHandler(corners: [Corner], image: UIImage, handler: ((cornerImageView: UIImageView, pinchableImageView: PinchableImageView) -> Void)) {
-    addImageViews(corners, image: image) { (imageView) in
-      handler(cornerImageView: imageView, pinchableImageView: self)
-    }
-  }
-  
-  private func addImageViews(corners: [Corner], image: UIImage, handler: ((imageView: UIImageView) -> Void)) {
-    for corner in corners {
-      let imageView = UIImageView(image: image)
-      imageView.sizeToFit()
-      imageView.userInteractionEnabled = true
-      setCornerImageViewPoint(imageView, corner: corner)
-      superview?.insertSubview(imageView, aboveSubview: self)
-      cornerImageViews[corner] = imageView
-      handler(imageView: imageView)
+  public func addCornerViews(cornerViews: [Corner: UIView], positioning p: CGPoint = .zero, panEnabled: Bool = true, handler: ((addedView: UIView, corner: Corner, pinchableImageView: PinchableImageView) -> Void)? = nil) {
+    positioning = p
+    for (corner, view) in cornerViews {
+      view.userInteractionEnabled = true
+      setCornerImageViewPoint(view, corner: corner)
+      superview?.insertSubview(view, aboveSubview: self)
+      self.cornerViews[corner] = view
+      if panEnabled {
+        let pan = UIPanGestureRecognizer(target: self, action: #selector(self.cornerPanned(_:)))
+        view.addGestureRecognizer(pan)
+      }
+      handler?(addedView: view, corner: corner, pinchableImageView: self)
     }
   }
   
@@ -88,24 +78,26 @@ public class PinchableImageView: UIImageView {
   }
   
   private func updateImageViewsPointAndRotate() {
-    for (corner, imageView) in cornerImageViews {
+    for (corner, imageView) in cornerViews {
       setCornerImageViewPoint(imageView, corner: corner)
       imageView.transform = lastRotateTransform
     }
   }
   
-  private func setCornerImageViewPoint(imageView: UIImageView, corner: Corner) {
+  private var positioning = CGPoint.zero
+  
+  private func setCornerImageViewPoint(view: UIView, corner: Corner) {
     let point: CGPoint
     switch corner {
-    case .LeftTop:     point = CGPoint(x: 0, y: 0)
-    case .RightTop:    point = CGPoint(x: bounds.width, y: 0)
-    case .LeftBottom:  point = CGPoint(x: 0, y: bounds.height)
-    case .RightBottom: point = CGPoint(x: bounds.width, y: bounds.height)
+    case .LeftTop:     point = CGPoint(x: positioning.x,                y: positioning.y)
+    case .RightTop:    point = CGPoint(x: bounds.width - positioning.x, y: positioning.y)
+    case .LeftBottom:  point = CGPoint(x: positioning.x,                y: bounds.height - positioning.y)
+    case .RightBottom: point = CGPoint(x: bounds.width - positioning.x, y: bounds.height - positioning.y)
     }
-    imageView.center = convertPoint(point, toView: superview)
+    view.center = convertPoint(point, toView: superview)
   }
   
-  private var cornerImageViews = [Corner: UIImageView]()
+  private var cornerViews = [Corner: UIView]()
   
   required public init?(coder aDecoder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
