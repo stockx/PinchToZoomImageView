@@ -67,11 +67,24 @@ public class PinchableImageView: UIImageView {
       view.removeFromSuperview()
     }
   }
+  
+  private func setCornerViewsUserInteractionEnabled(enabled: Bool, withoutCorners: [Corner]) {
+    for (corner, view) in cornerViews {
+      if !withoutCorners.contains(corner) {
+        view.userInteractionEnabled = enabled
+      }
+    }
+  }
 
   private var beginPanRotate = CGFloat(0)
   private var panPointAdjustment = CGPoint.zero
+  private var panningRecognizer: UIPanGestureRecognizer?
   
   @objc private func cornerPanned(recognizer: UIPanGestureRecognizer) {
+    if panningRecognizer == nil {
+      panningRecognizer = recognizer
+    } else if panningRecognizer != recognizer { return }
+
     let cornerKey = "corner"
     let centerKey = "center"
     
@@ -84,6 +97,10 @@ public class PinchableImageView: UIImageView {
     let panPointInSuperview = recognizer.locationInView(superview)
     switch recognizer.state {
     case .Began:
+      if activeLocations[cornerKey] != nil || activeLocations[centerKey] != nil { return }
+
+      setCornerViewsUserInteractionEnabled(false, withoutCorners: [c])
+      
       let point = convertPoint(cornerPoint(c, isPositioning: false), toView: superview)
       let centerPoint = convertPoint(CGPoint(x: bounds.width / 2, y: bounds.height / 2), toView: superview)
       panPointAdjustment = panPointInSuperview - point
@@ -95,12 +112,14 @@ public class PinchableImageView: UIImageView {
       let diff = panPointInSuperview - centerPoint
       beginPanRotate = atan2(diff.x, diff.y)
     case .Changed:
+      if activeLocations[cornerKey] == nil || activeLocations[centerKey] == nil { return }
       let centerPoint = activeLocations[centerKey]!
       let diff = panPointInSuperview - centerPoint
       let panRotate = atan2(diff.x, diff.y)
       activeLocations[cornerKey] = panPointInSuperview - CGPointApplyAffineTransform(panPointAdjustment, CGAffineTransformMakeRotation(beginPanRotate - panRotate))
       touchesMoved()
     case .Ended, .Cancelled:
+      if activeLocations[cornerKey] == nil || activeLocations[centerKey] == nil { return }
       activeLocations.removeValueForKey(cornerKey)
       activeLocations.removeValueForKey(centerKey)
       touchesEnded([cornerKey, centerKey])
@@ -173,6 +192,8 @@ public class PinchableImageView: UIImageView {
   }
   
   override public func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    setCornerViewsUserInteractionEnabled(false, withoutCorners: [])
+
     var keys = [UITouch]()
     for t in touches {
       activeTouches.append(t)
@@ -266,6 +287,8 @@ public class PinchableImageView: UIImageView {
         updateActiveLocationsFromTouches()
         let transform = CGAffineTransformTranslateWithSize(self.transform, -bounds.size / 2)
         beginCenter = CGPointApplyAffineTransform(convertPoint(activeLocation(0), fromView: superview), transform)
+      } else {
+        setCornerViewsUserInteractionEnabled(true, withoutCorners: [])
       }
     }
   }
