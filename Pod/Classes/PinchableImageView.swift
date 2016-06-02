@@ -129,7 +129,6 @@ public class PinchableImageView: UIImageView {
   private var lastRotateTransform = CGAffineTransformIdentity
   private var lastScale = CGFloat(1)
   private var endRotateTransform = CGAffineTransformIdentity
-  private var endScale = CGFloat(1)
   
   private var activeTouches = [UITouch]()
   
@@ -185,7 +184,7 @@ public class PinchableImageView: UIImageView {
     beginSize = bounds.size
     beginTransform = endRotateTransform
     lastRotateTransform = CGAffineTransformIdentity
-    lastScale = endScale
+    lastScale = 1
     
     if activeLocationKeys.count == 1 {
       beginCenter = location0
@@ -208,7 +207,7 @@ public class PinchableImageView: UIImageView {
       let rotate = lockRotate ? 0 : beginRadian - radian
       let locationInLabelFromCenter = beginCenter * scale
       
-      lastScale = scale * endScale
+      lastScale = scale
       lastRotateTransform = CGAffineTransformMakeRotation(rotate)
       let transform = CGAffineTransformScaleWithFloat(lastRotateTransform, lastScale)
       self.transform = CGAffineTransformConcat(beginTransform, transform)
@@ -229,8 +228,9 @@ public class PinchableImageView: UIImageView {
       endRotateTransform = CGAffineTransformConcat(beginTransform, lastRotateTransform)
       
       bounds.size = beginSize * lastScale
+      beginSize = bounds.size
+      lastScale = 1
       
-      endScale = 1
       self.transform = endRotateTransform
       
       if activeLocationKeys.count == 1 {
