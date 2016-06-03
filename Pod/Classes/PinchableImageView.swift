@@ -178,7 +178,6 @@ extension PinchableImageView {
   }
   
   private func cornerPoint(corner: Corner, isPositioning: Bool) -> CGPoint {
-    let point: CGPoint
     let applyPositioning = isPositioning ? positioning / lastScale : .zero
     switch corner {
     case .LeftTop:     return CGPoint(x: applyPositioning.x,                y: applyPositioning.y)
