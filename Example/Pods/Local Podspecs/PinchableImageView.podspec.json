@@ -1,25 +1,21 @@
 {
   "name": "PinchableImageView",
-  "version": "0.1.0",
-  "summary": "A short description of PinchableImageView.",
-  "description": "",
-  "homepage": "https://github.com/<GITHUB_USERNAME>/PinchableImageView",
+  "version": "0.3.0-beta1",
+  "summary": "You can pinch an imageView.",
+  "description": "You can rotate and scale this imageView by pinching.",
+  "homepage": "https://github.com/malt03/PinchableImageView",
+  "screenshots": "https://raw.githubusercontent.com/malt03/PinchableImageView/master/Screenshot.gif",
   "license": "MIT",
   "authors": {
-    "Koji Murata": "koji.murata@dena.com"
+    "Koji Murata": "malt.koji@gmail.com"
   },
   "source": {
-    "git": "https://github.com/<GITHUB_USERNAME>/PinchableImageView.git",
-    "tag": "0.1.0"
+    "git": "https://github.com/malt03/PinchableImageView.git",
+    "tag": "0.3.0-beta1"
   },
   "platforms": {
     "ios": "8.0"
   },
   "requires_arc": true,
-  "source_files": "Pod/Classes/**/*",
-  "resource_bundles": {
-    "PinchableImageView": [
-      "Pod/Assets/*.png"
-    ]
-  }
+  "source_files": "Pod/Classes/**/*"
 }

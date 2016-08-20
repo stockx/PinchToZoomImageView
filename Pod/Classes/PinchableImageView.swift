@@ -9,25 +9,25 @@
 import UIKit
 
 @objc public protocol PinchableImageViewDelegate {
-  optional func pinchableImageViewTouchesBegan(pinchableImageView: PinchableImageView, touches: Set<UITouch>, withEvent event: UIEvent?)
-  optional func pinchableImageViewTouchesMoved(pinchableImageView: PinchableImageView, touches: Set<UITouch>, withEvent event: UIEvent?)
-  optional func pinchableImageViewTouchesEnded(pinchableImageView: PinchableImageView, touches: Set<UITouch>, withEvent event: UIEvent?)
+  @objc optional func pinchableImageViewTouchesBegan(_ pinchableImageView: PinchableImageView, touches: Set<UITouch>, withEvent event: UIEvent?)
+  @objc optional func pinchableImageViewTouchesMoved(_ pinchableImageView: PinchableImageView, touches: Set<UITouch>, withEvent event: UIEvent?)
+  @objc optional func pinchableImageViewTouchesEnded(_ pinchableImageView: PinchableImageView, touches: Set<UITouch>, withEvent event: UIEvent?)
 }
 
-public class PinchableImageView: UIImageView {
+open class PinchableImageView: UIImageView {
   // Making the hit area larger than the default hit area.
-  public var tappableInset = UIEdgeInsets(top: -50, left: -50, bottom: -50, right: -50)
+  open var tappableInset = UIEdgeInsets(top: -50, left: -50, bottom: -50, right: -50)
   
-  public weak var delegate: PinchableImageViewDelegate?
+  open weak var delegate: PinchableImageViewDelegate?
   
   // MARK: - for lock
   
-  public var lockRotate = false
-  public var lockScale = false
-  public var lockOriginX = false
-  public var lockOriginY = false
+  open var lockRotate = false
+  open var lockScale = false
+  open var lockOriginX = false
+  open var lockOriginY = false
   
-  public func unlockAll() {
+  open func unlockAll() {
     lockRotate = false
     lockScale = false
     lockOriginX = false
@@ -37,34 +37,34 @@ public class PinchableImageView: UIImageView {
   // MARK: - for corner views
   
   public enum Corner {
-    case LeftTop
-    case RightTop
-    case LeftBottom
-    case RightBottom
+    case leftTop
+    case rightTop
+    case leftBottom
+    case rightBottom
   }
   
-  public func addCornerViews(cornerViews: [Corner: UIView], positioning p: CGPoint = .zero, panEnabled: Bool = true, handler: ((addedView: UIView, corner: Corner, pinchableImageView: PinchableImageView) -> Void)? = nil) {
+  open func addCornerViews(_ cornerViews: [Corner: UIView], positioning p: CGPoint = .zero, panEnabled: Bool = true, handler: ((_ addedView: UIView, _ corner: Corner, _ pinchableImageView: PinchableImageView) -> Void)? = nil) {
     positioning = p
     for (corner, view) in cornerViews {
       self.cornerViews[corner]?.removeFromSuperview()
-      view.userInteractionEnabled = true
+      view.isUserInteractionEnabled = true
       self.cornerViews[corner] = view
       if panEnabled {
         let pan = UIPanGestureRecognizer(target: self, action: #selector(self.cornerPanned(_:)))
         view.addGestureRecognizer(pan)
       }
-      handler?(addedView: view, corner: corner, pinchableImageView: self)
+      handler?(view, corner, self)
     }
   }
   
-  public func showCornerViews() {
+  open func showCornerViews() {
     for (corner, view) in cornerViews {
       setCornerImageViewPoint(view, corner: corner)
       superview?.insertSubview(view, aboveSubview: self)
     }
   }
   
-  public func hideCornerViews() {
+  open func hideCornerViews() {
     for (_, view) in cornerViews {
       view.removeFromSuperview()
     }
@@ -78,8 +78,8 @@ public class PinchableImageView: UIImageView {
   
   override public init(frame: CGRect) {
     super.init(frame: frame)
-    userInteractionEnabled = true
-    multipleTouchEnabled = true
+    isUserInteractionEnabled = true
+    isMultipleTouchEnabled = true
   }
   
   required public init?(coder aDecoder: NSCoder) {
@@ -89,41 +89,41 @@ public class PinchableImageView: UIImageView {
   // MARK: - private variables
 
   // MARK: for panning self view
-  private var activeTouches = [UITouch]()
+  fileprivate var activeTouches = [UITouch]()
   
   // MARK: for main
-  private var beginSize: CGSize!
-  private var beginCenter: CGPoint!
-  private var beginDistance = CGFloat(0)
-  private var beginRadian = CGFloat(0)
-  private var beginTransform = CGAffineTransformIdentity
-  private var lastRotateTransform = CGAffineTransformIdentity
-  private var lastScale = CGFloat(1)
-  private var endRotateTransform = CGAffineTransformIdentity
+  fileprivate var beginSize: CGSize!
+  fileprivate var beginCenter: CGPoint!
+  fileprivate var beginDistance = CGFloat(0)
+  fileprivate var beginRadian = CGFloat(0)
+  fileprivate var beginTransform = CGAffineTransform.identity
+  fileprivate var lastRotateTransform = CGAffineTransform.identity
+  fileprivate var lastScale = CGFloat(1)
+  fileprivate var endRotateTransform = CGAffineTransform.identity
   
-  private var activeLocations = [NSObject: CGPoint]()
-  private var activeLocationKeys = [NSObject]()
+  fileprivate var activeLocations = [NSObject: CGPoint]()
+  fileprivate var activeLocationKeys = [NSObject]()
   
   // MARK: for panning corner views
-  private var cornerViews = [Corner: UIView]()
+  fileprivate var cornerViews = [Corner: UIView]()
   
-  private var beginPanRotate = CGFloat(0)
-  private var panPointAdjustment = CGPoint.zero
-  private var panningRecognizer: UIPanGestureRecognizer?
+  fileprivate var beginPanRotate = CGFloat(0)
+  fileprivate var panPointAdjustment = CGPoint.zero
+  fileprivate var panningRecognizer: UIPanGestureRecognizer?
   
-  private var positioning = CGPoint.zero
+  fileprivate var positioning = CGPoint.zero
 }
 
 // MARK: - panning corner views
 
 extension PinchableImageView {
-  @objc private func cornerPanned(recognizer: UIPanGestureRecognizer) {
+  @objc fileprivate func cornerPanned(_ recognizer: UIPanGestureRecognizer) {
     if panningRecognizer == nil {
       panningRecognizer = recognizer
     } else if panningRecognizer != recognizer { return }
 
-    let cornerKey = "corner"
-    let centerKey = "center"
+    let cornerKey = "corner" as NSString
+    let centerKey = "center" as NSString
     
     var corner: Corner?
     for (c, v) in cornerViews {
@@ -131,66 +131,66 @@ extension PinchableImageView {
     }
     guard let c = corner else { return }
     
-    let panPointInSuperview = recognizer.locationInView(superview)
+    let panPointInSuperview = recognizer.location(in: superview)
     switch recognizer.state {
-    case .Began:
+    case .began:
       if activeLocations[cornerKey] != nil || activeLocations[centerKey] != nil { return }
 
       setCornerViewsUserInteractionEnabled(false, withoutCorners: [c])
       
-      let point = convertPoint(cornerPoint(c, isPositioning: false), toView: superview)
-      let centerPoint = convertPoint(CGPoint(x: bounds.width / 2, y: bounds.height / 2), toView: superview)
+      let point = convert(cornerPoint(c, isPositioning: false), to: superview)
+      let centerPoint = convert(CGPoint(x: bounds.width / 2, y: bounds.height / 2), to: superview)
       panPointAdjustment = panPointInSuperview - point
       activeLocations[cornerKey] = point
       activeLocations[centerKey] = centerPoint
 
-      touchesBegan([cornerKey, centerKey])
+      touchesBegan([cornerKey as NSObject, centerKey as NSObject])
 
       let diff = panPointInSuperview - centerPoint
       beginPanRotate = atan2(diff.x, diff.y)
-    case .Changed:
+    case .changed:
       if activeLocations[cornerKey] == nil || activeLocations[centerKey] == nil { return }
       let centerPoint = activeLocations[centerKey]!
       let diff = panPointInSuperview - centerPoint
       let panRotate = atan2(diff.x, diff.y)
-      activeLocations[cornerKey] = panPointInSuperview - CGPointApplyAffineTransform(panPointAdjustment, CGAffineTransformMakeRotation(beginPanRotate - panRotate))
+      activeLocations[cornerKey] = panPointInSuperview - panPointAdjustment.applying(CGAffineTransform(rotationAngle: beginPanRotate - panRotate))
       touchesMoved()
-    case .Ended, .Cancelled:
+    case .ended, .cancelled:
       if activeLocations[cornerKey] == nil || activeLocations[centerKey] == nil { return }
-      activeLocations.removeValueForKey(cornerKey)
-      activeLocations.removeValueForKey(centerKey)
-      touchesEnded([cornerKey, centerKey])
+      activeLocations.removeValue(forKey: cornerKey)
+      activeLocations.removeValue(forKey: centerKey)
+      touchesEnded([cornerKey as NSObject, centerKey as NSObject])
       panningRecognizer = nil
     default:
       break
     }
   }
   
-  private func updateImageViewsPointAndRotate() {
+  fileprivate func updateImageViewsPointAndRotate() {
     for (corner, imageView) in cornerViews {
       setCornerImageViewPoint(imageView, corner: corner)
-      imageView.transform = CGAffineTransformConcat(beginTransform, lastRotateTransform)
+      imageView.transform = beginTransform.concatenating(lastRotateTransform)
     }
   }
   
-  private func setCornerImageViewPoint(view: UIView, corner: Corner) {
-    view.center = convertPoint(cornerPoint(corner, isPositioning: true), toView: superview)
+  fileprivate func setCornerImageViewPoint(_ view: UIView, corner: Corner) {
+    view.center = convert(cornerPoint(corner, isPositioning: true), to: superview)
   }
   
-  private func cornerPoint(corner: Corner, isPositioning: Bool) -> CGPoint {
+  fileprivate func cornerPoint(_ corner: Corner, isPositioning: Bool) -> CGPoint {
     let applyPositioning = isPositioning ? positioning / lastScale : .zero
     switch corner {
-    case .LeftTop:     return CGPoint(x: applyPositioning.x,                y: applyPositioning.y)
-    case .RightTop:    return CGPoint(x: bounds.width - applyPositioning.x, y: applyPositioning.y)
-    case .LeftBottom:  return CGPoint(x: applyPositioning.x,                y: bounds.height - applyPositioning.y)
-    case .RightBottom: return CGPoint(x: bounds.width - applyPositioning.x, y: bounds.height - applyPositioning.y)
+    case .leftTop:     return CGPoint(x: applyPositioning.x,                y: applyPositioning.y)
+    case .rightTop:    return CGPoint(x: bounds.width - applyPositioning.x, y: applyPositioning.y)
+    case .leftBottom:  return CGPoint(x: applyPositioning.x,                y: bounds.height - applyPositioning.y)
+    case .rightBottom: return CGPoint(x: bounds.width - applyPositioning.x, y: bounds.height - applyPositioning.y)
     }
   }
   
-  private func setCornerViewsUserInteractionEnabled(enabled: Bool, withoutCorners: [Corner]) {
+  fileprivate func setCornerViewsUserInteractionEnabled(_ enabled: Bool, withoutCorners: [Corner]) {
     for (corner, view) in cornerViews {
       if !withoutCorners.contains(corner) {
-        view.userInteractionEnabled = enabled
+        view.isUserInteractionEnabled = enabled
       }
     }
   }
@@ -199,13 +199,13 @@ extension PinchableImageView {
 // MARK: - panning self view
 
 extension PinchableImageView {
-  override public func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+  override open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
     setCornerViewsUserInteractionEnabled(false, withoutCorners: [])
 
     var keys = [UITouch]()
     for t in touches {
       activeTouches.append(t)
-      activeLocations[t] = t.locationInView(superview)
+      activeLocations[t] = t.location(in: superview)
       keys.append(t)
     }
 
@@ -213,7 +213,7 @@ extension PinchableImageView {
     delegate?.pinchableImageViewTouchesBegan?(self, touches: touches, withEvent: event)
   }
   
-  override public func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
+  override open func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
     updateActiveLocationsFromTouches()
 
     touchesMoved()
@@ -221,10 +221,10 @@ extension PinchableImageView {
     delegate?.pinchableImageViewTouchesMoved?(self, touches: touches, withEvent: event)
   }
   
-  override public func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+  override open func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
     for t in touches {
-      activeLocations.removeValueForKey(t)
-      activeTouches.removeAtIndex(activeTouches.indexOf(t)!)
+      activeLocations.removeValue(forKey: t)
+      activeTouches.remove(at: activeTouches.index(of: t)!)
     }
     
     touchesEnded(touches)
@@ -232,44 +232,45 @@ extension PinchableImageView {
     delegate?.pinchableImageViewTouchesEnded?(self, touches: touches, withEvent: event)
   }
   
-  public override func touchesCancelled(touches: Set<UITouch>?, withEvent event: UIEvent?) {
-    guard let t = touches else { return }
-    touchesEnded(t, withEvent: event)
+  open override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+    touchesEnded(touches, with: event)
   }
 }
 
 // MARK: - main
 extension PinchableImageView {
-  private func activeLocation(index: Int) -> CGPoint {
+  fileprivate func activeLocation(_ index: Int) -> CGPoint {
     return activeLocations[activeLocationKeys[index]]!
   }
-  private func updateActiveLocationsFromTouches() {
+  fileprivate func updateActiveLocationsFromTouches() {
     for t in activeTouches {
-      activeLocations[t] = t.locationInView(superview)
+      activeLocations[t] = t.location(in: superview)
     }
   }
 
-  private func touchesBegan(keys: [NSObject]) {
+  fileprivate func touchesBegan(_ keys: [NSObject]) {
     let lastActiveTouchesCount = activeLocationKeys.count
     activeLocationKeys += keys
     
     let transform = CGAffineTransformTranslateWithSize(self.transform, -bounds.size / 2)
-    let location0 = CGPointApplyAffineTransform(convertPoint(activeLocation(0), fromView: superview), transform)
+    let location0 = convert(activeLocation(0), from: superview).applying(transform)
     
     beginSize = bounds.size
     beginTransform = endRotateTransform
-    lastRotateTransform = CGAffineTransformIdentity
+    lastRotateTransform = CGAffineTransform.identity
     lastScale = 1
     
     if activeLocationKeys.count == 1 {
       beginCenter = location0
     } else if lastActiveTouchesCount < 2 && activeLocationKeys.count >= 2 {
-      let location1 = CGPointApplyAffineTransform(convertPoint(activeLocation(1), fromView: superview), transform)
-      (beginDistance, beginRadian, beginCenter) = distanceRadianAndCenter(location0, location1)
+      let location1 = convert(activeLocation(1), from: superview).applying(transform)
+      var center: CGPoint?
+      (beginDistance, beginRadian, center) = distanceRadianAndCenter(location0, location1)
+      beginCenter = center
     }
   }
   
-  private func touchesMoved() {
+  fileprivate func touchesMoved() {
     let location0 = activeLocation(0)
     let c: CGPoint
     if activeLocationKeys.count == 1 {
@@ -283,10 +284,10 @@ extension PinchableImageView {
       let locationInLabelFromCenter = beginCenter * scale
       
       lastScale = scale
-      lastRotateTransform = CGAffineTransformMakeRotation(rotate)
+      lastRotateTransform = CGAffineTransform(rotationAngle: rotate)
       let transform = CGAffineTransformScaleWithFloat(lastRotateTransform, lastScale)
-      self.transform = CGAffineTransformConcat(beginTransform, transform)
-      c = location - CGPointApplyAffineTransform(locationInLabelFromCenter, lastRotateTransform)
+      self.transform = beginTransform.concatenating(transform)
+      c = location! - locationInLabelFromCenter.applying(lastRotateTransform)
     }
     
     if !lockOriginX { center.x = c.x }
@@ -295,12 +296,12 @@ extension PinchableImageView {
     updateImageViewsPointAndRotate()
   }
   
-  private func touchesEnded(keys: Set<NSObject>) {
+  fileprivate func touchesEnded(_ keys: Set<NSObject>) {
     for k in keys {
-      activeLocationKeys.removeAtIndex(activeLocationKeys.indexOf(k)!)
+      activeLocationKeys.remove(at: activeLocationKeys.index(of: k)!)
     }
     if activeLocationKeys.count < 2 {
-      endRotateTransform = CGAffineTransformConcat(beginTransform, lastRotateTransform)
+      endRotateTransform = beginTransform.concatenating(lastRotateTransform)
       
       bounds.size = beginSize * lastScale
       beginSize = bounds.size
@@ -311,7 +312,7 @@ extension PinchableImageView {
       if activeLocationKeys.count == 1 {
         updateActiveLocationsFromTouches()
         let transform = CGAffineTransformTranslateWithSize(self.transform, -bounds.size / 2)
-        beginCenter = CGPointApplyAffineTransform(convertPoint(activeLocation(0), fromView: superview), transform)
+        beginCenter = convert(activeLocation(0), from: superview).applying(transform)
       } else {
         setCornerViewsUserInteractionEnabled(true, withoutCorners: [])
       }
@@ -322,21 +323,21 @@ extension PinchableImageView {
 // MARK: - expand tap territory
 
 extension PinchableImageView {
-  override public func pointInside(point: CGPoint, withEvent event: UIEvent?) -> Bool {
+  override open func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
     if activeLocationKeys.count > 0 { return true }
     var rect = bounds
     rect.origin.x += tappableInset.left
     rect.origin.y += tappableInset.top
     rect.size.width -= (tappableInset.left + tappableInset.right)
     rect.size.height -= (tappableInset.top + tappableInset.bottom)
-    return CGRectContainsPoint(rect, point)
+    return rect.contains(point)
   }
 }
 
 // MARK: - for subviews
 
 extension PinchableImageView {
-  public override func removeFromSuperview() {
+  open override func removeFromSuperview() {
     super.removeFromSuperview()
     for (_, view) in cornerViews {
       view.removeFromSuperview()
@@ -346,7 +347,7 @@ extension PinchableImageView {
 
 // MARK: - util
 
-private func distanceRadianAndCenter(a: CGPoint, _ b: CGPoint) -> (CGFloat, CGFloat, CGPoint!) {
+private func distanceRadianAndCenter(_ a: CGPoint, _ b: CGPoint) -> (CGFloat, CGFloat, CGPoint?) {
   let diff = a - b
   let distance = sqrt(diff.x * diff.x + diff.y * diff.y)
   let radian = atan2(diff.x, diff.y)
@@ -356,12 +357,12 @@ private func distanceRadianAndCenter(a: CGPoint, _ b: CGPoint) -> (CGFloat, CGFl
 
 // MARK: - creating transform
 
-private func CGAffineTransformTranslateWithSize(transform: CGAffineTransform, _ size: CGSize) -> CGAffineTransform {
-  return CGAffineTransformTranslate(transform, size.width, size.height)
+private func CGAffineTransformTranslateWithSize(_ transform: CGAffineTransform, _ size: CGSize) -> CGAffineTransform {
+  return transform.translatedBy(x: size.width, y: size.height)
 }
 
-private func CGAffineTransformScaleWithFloat(transform: CGAffineTransform, _ float: CGFloat) -> CGAffineTransform {
-  return CGAffineTransformScale(transform, float, float)
+private func CGAffineTransformScaleWithFloat(_ transform: CGAffineTransform, _ float: CGFloat) -> CGAffineTransform {
+  return transform.scaledBy(x: float, y: float)
 }
 
 // MARK: - operators

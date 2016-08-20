@@ -1,5 +1,5 @@
 PODS:
-  - PinchableImageView (0.1.0)
+  - PinchableImageView (0.3.0-beta1)
 
 DEPENDENCIES:
   - PinchableImageView (from `../`)
@@ -9,6 +9,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  PinchableImageView: 99dd05c0611574be894f61d4b9ff69ee994ad25c
+  PinchableImageView: b1f2470c64f46a50647e9f9031c083bbd94e06d1
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: d7ce08f5b829e6dc6434824cf3ef15efd21bb896
+
+COCOAPODS: 1.1.0.beta.1

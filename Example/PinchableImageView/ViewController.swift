@@ -10,9 +10,9 @@ import UIKit
 import PinchableImageView
 
 class ViewController: UIViewController, PinchableImageViewDelegate {
-  private let imageView = PinchableImageView()
+  fileprivate let imageView = PinchableImageView()
   
-  override func viewDidAppear(animated: Bool) {
+  override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
 
     imageView.image = UIImage(named: "lena")!
@@ -24,18 +24,18 @@ class ViewController: UIViewController, PinchableImageViewDelegate {
       return iview
     }
     let removeButton = UIButton(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
-    removeButton.backgroundColor = .redColor()
-    removeButton.addTarget(self, action: #selector(remove), forControlEvents: .TouchUpInside)
+    removeButton.backgroundColor = .red
+    removeButton.addTarget(self, action: #selector(remove), for: .touchUpInside)
     
-    imageView.addCornerViews([.LeftBottom: v(), .RightTop: v(), .RightBottom: v()], positioning: CGPoint(x: -10, y: -10))
-    imageView.addCornerViews([.LeftTop: removeButton], positioning: .zero, panEnabled: false)
+    imageView.addCornerViews([.leftBottom: v(), .rightTop: v(), .rightBottom: v()], positioning: CGPoint(x: -10, y: -10))
+    imageView.addCornerViews([.leftTop: removeButton], positioning: .zero, panEnabled: false)
     
     imageView.delegate = self
     
     view.addSubview(imageView)
   }
   
-  @objc private func remove() {
+  @objc fileprivate func remove() {
     imageView.removeFromSuperview()
   }
   
@@ -43,15 +43,15 @@ class ViewController: UIViewController, PinchableImageViewDelegate {
     imageView.hideCornerViews()
   }
 
-  func pinchableImageViewTouchesBegan(pinchableImageView: PinchableImageView, touches: Set<UITouch>, withEvent event: UIEvent?) {
+  func pinchableImageViewTouchesBegan(_ pinchableImageView: PinchableImageView, touches: Set<UITouch>, withEvent event: UIEvent?) {
     pinchableImageView.showCornerViews()
   }
 
-  func pinchableImageViewTouchesMoved(pinchableImageView: PinchableImageView, touches: Set<UITouch>, withEvent event: UIEvent?) {
+  func pinchableImageViewTouchesMoved(_ pinchableImageView: PinchableImageView, touches: Set<UITouch>, withEvent event: UIEvent?) {
 
   }
 
-  func pinchableImageViewTouchesEnded(pinchableImageView: PinchableImageView, touches: Set<UITouch>, withEvent event: UIEvent?) {
+  func pinchableImageViewTouchesEnded(_ pinchableImageView: PinchableImageView, touches: Set<UITouch>, withEvent event: UIEvent?) {
 
   }
 }

@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		15C6F510BA8FBF3571505F34 /* Pods_PinchableImageView_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40E7617A6213EAD455425AF3 /* Pods_PinchableImageView_Example.framework */; };
-		417BDC4F13C959C022FA8A56 /* Pods_PinchableImageView_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A7BC2AA274398CAB39F012F /* Pods_PinchableImageView_Tests.framework */; };
+		1BD9A52A6507B70D6CC1E1C5 /* Pods_PinchableImageView_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2536D6592ABE269D222DAE66 /* Pods_PinchableImageView_Tests.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		EBBF2ADA73C49A3FB48C4276 /* Pods_PinchableImageView_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2066E1A4B6741428BF890F0D /* Pods_PinchableImageView_Example.framework */; };
 		EDF2AF6E1D003C3A00FA3D1D /* KTouchPointerWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = EDF2AF6D1D003C3A00FA3D1D /* KTouchPointerWindow.m */; };
 /* End PBXBuildFile section */
 
@@ -29,10 +29,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		05236288EC10649AA73EDD3C /* Pods-PinchableImageView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PinchableImageView_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PinchableImageView_Example/Pods-PinchableImageView_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		086356704BF9B6092448E716 /* PinchableImageView.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = PinchableImageView.podspec; path = ../PinchableImageView.podspec; sourceTree = "<group>"; };
-		15D3AB1CF0CC22C47D645340 /* Pods-PinchableImageView_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PinchableImageView_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PinchableImageView_Tests/Pods-PinchableImageView_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		40E7617A6213EAD455425AF3 /* Pods_PinchableImageView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PinchableImageView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2066E1A4B6741428BF890F0D /* Pods_PinchableImageView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PinchableImageView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2536D6592ABE269D222DAE66 /* Pods_PinchableImageView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PinchableImageView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		37A2C2B4658EC026CB2ED64A /* Pods-PinchableImageView_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PinchableImageView_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PinchableImageView_Tests/Pods-PinchableImageView_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		48E2BC9F2379B9F4429F4F2A /* Pods-PinchableImageView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PinchableImageView_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PinchableImageView_Example/Pods-PinchableImageView_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		5A3BE26E52F39249D7577E4C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* PinchableImageView_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PinchableImageView_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -44,9 +45,8 @@
 		607FACE51AFB9204008FA782 /* PinchableImageView_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PinchableImageView_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		64B8E593EE81681963F43523 /* Pods-PinchableImageView_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PinchableImageView_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-PinchableImageView_Example/Pods-PinchableImageView_Example.release.xcconfig"; sourceTree = "<group>"; };
-		6CF53A4267FC7FAED738EAA3 /* Pods-PinchableImageView_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PinchableImageView_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PinchableImageView_Tests/Pods-PinchableImageView_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		9A7BC2AA274398CAB39F012F /* Pods_PinchableImageView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PinchableImageView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		78FCC9330097202D9C64A3C2 /* Pods-PinchableImageView_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PinchableImageView_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-PinchableImageView_Example/Pods-PinchableImageView_Example.release.xcconfig"; sourceTree = "<group>"; };
+		CE0E953BAF14285EA1132B2C /* Pods-PinchableImageView_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PinchableImageView_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PinchableImageView_Tests/Pods-PinchableImageView_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		EDF2AF6B1D003C3900FA3D1D /* PinchableImageView_Example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PinchableImageView_Example-Bridging-Header.h"; sourceTree = "<group>"; };
 		EDF2AF6C1D003C3A00FA3D1D /* KTouchPointerWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KTouchPointerWindow.h; path = ../../KTouchPointerWindow/KTouchPointerWindow/KTouchPointerWindow.h; sourceTree = "<group>"; };
 		EDF2AF6D1D003C3A00FA3D1D /* KTouchPointerWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KTouchPointerWindow.m; path = ../../KTouchPointerWindow/KTouchPointerWindow/KTouchPointerWindow.m; sourceTree = "<group>"; };
@@ -58,7 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				15C6F510BA8FBF3571505F34 /* Pods_PinchableImageView_Example.framework in Frameworks */,
+				EBBF2ADA73C49A3FB48C4276 /* Pods_PinchableImageView_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,22 +66,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				417BDC4F13C959C022FA8A56 /* Pods_PinchableImageView_Tests.framework in Frameworks */,
+				1BD9A52A6507B70D6CC1E1C5 /* Pods_PinchableImageView_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2572E3B7399DCCE0F704FA4E /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				40E7617A6213EAD455425AF3 /* Pods_PinchableImageView_Example.framework */,
-				9A7BC2AA274398CAB39F012F /* Pods_PinchableImageView_Tests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
@@ -89,8 +80,8 @@
 				607FACD21AFB9204008FA782 /* Example for PinchableImageView */,
 				607FACE81AFB9204008FA782 /* Tests */,
 				607FACD11AFB9204008FA782 /* Products */,
-				E98BA61580FBF80EFE447944 /* Pods */,
-				2572E3B7399DCCE0F704FA4E /* Frameworks */,
+				DCFFBEEBD693719A5E9AAEAB /* Pods */,
+				9E714ADB6855A8C164B54193 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -155,13 +146,22 @@
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
-		E98BA61580FBF80EFE447944 /* Pods */ = {
+		9E714ADB6855A8C164B54193 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				05236288EC10649AA73EDD3C /* Pods-PinchableImageView_Example.debug.xcconfig */,
-				64B8E593EE81681963F43523 /* Pods-PinchableImageView_Example.release.xcconfig */,
-				6CF53A4267FC7FAED738EAA3 /* Pods-PinchableImageView_Tests.debug.xcconfig */,
-				15D3AB1CF0CC22C47D645340 /* Pods-PinchableImageView_Tests.release.xcconfig */,
+				2066E1A4B6741428BF890F0D /* Pods_PinchableImageView_Example.framework */,
+				2536D6592ABE269D222DAE66 /* Pods_PinchableImageView_Tests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DCFFBEEBD693719A5E9AAEAB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				48E2BC9F2379B9F4429F4F2A /* Pods-PinchableImageView_Example.debug.xcconfig */,
+				78FCC9330097202D9C64A3C2 /* Pods-PinchableImageView_Example.release.xcconfig */,
+				37A2C2B4658EC026CB2ED64A /* Pods-PinchableImageView_Tests.debug.xcconfig */,
+				CE0E953BAF14285EA1132B2C /* Pods-PinchableImageView_Tests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -173,12 +173,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "PinchableImageView_Example" */;
 			buildPhases = (
-				6EA00D08D7D07E853477A180 /* Check Pods Manifest.lock */,
+				2DFE1CE56E7CCA3841F0FD5D /* [CP] Check Pods Manifest.lock */,
 				607FACCC1AFB9204008FA782 /* Sources */,
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
-				03C6CE0EC88B7F66ED30CBCE /* Embed Pods Frameworks */,
-				F1F297FA6C9EA4F1F6138794 /* Copy Pods Resources */,
+				AC2D16616972662846443353 /* [CP] Embed Pods Frameworks */,
+				74252163BD745C38053FD115 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -193,12 +193,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "PinchableImageView_Tests" */;
 			buildPhases = (
-				4C4B6911ACA74C579AAA9981 /* Check Pods Manifest.lock */,
+				303724F1F84BAE8323823116 /* [CP] Check Pods Manifest.lock */,
 				607FACE11AFB9204008FA782 /* Sources */,
 				607FACE21AFB9204008FA782 /* Frameworks */,
 				607FACE31AFB9204008FA782 /* Resources */,
-				45B2FBC7376DAD558BA0E732 /* Embed Pods Frameworks */,
-				BB653CAF145CC1E326C7E81B /* Copy Pods Resources */,
+				2C754B1D5BE2EC0817575922 /* [CP] Embed Pods Frameworks */,
+				EDD06664FC05F9BA2CAA00C5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -222,9 +222,11 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						LastSwiftMigration = 0800;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
 				};
@@ -269,29 +271,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		03C6CE0EC88B7F66ED30CBCE /* Embed Pods Frameworks */ = {
+		2C754B1D5BE2EC0817575922 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PinchableImageView_Example/Pods-PinchableImageView_Example-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		45B2FBC7376DAD558BA0E732 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -299,64 +286,79 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PinchableImageView_Tests/Pods-PinchableImageView_Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		4C4B6911ACA74C579AAA9981 /* Check Pods Manifest.lock */ = {
+		2DFE1CE56E7CCA3841F0FD5D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		6EA00D08D7D07E853477A180 /* Check Pods Manifest.lock */ = {
+		303724F1F84BAE8323823116 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		BB653CAF145CC1E326C7E81B /* Copy Pods Resources */ = {
+		74252163BD745C38053FD115 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PinchableImageView_Tests/Pods-PinchableImageView_Tests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F1F297FA6C9EA4F1F6138794 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PinchableImageView_Example/Pods-PinchableImageView_Example-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AC2D16616972662846443353 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PinchableImageView_Example/Pods-PinchableImageView_Example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EDD06664FC05F9BA2CAA00C5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PinchableImageView_Tests/Pods-PinchableImageView_Tests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -494,7 +496,7 @@
 		};
 		607FACF01AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 05236288EC10649AA73EDD3C /* Pods-PinchableImageView_Example.debug.xcconfig */;
+			baseConfigurationReference = 48E2BC9F2379B9F4429F4F2A /* Pods-PinchableImageView_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -505,12 +507,13 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "PinchableImageView/PinchableImageView_Example-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		607FACF11AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 64B8E593EE81681963F43523 /* Pods-PinchableImageView_Example.release.xcconfig */;
+			baseConfigurationReference = 78FCC9330097202D9C64A3C2 /* Pods-PinchableImageView_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -520,12 +523,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "PinchableImageView/PinchableImageView_Example-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 		607FACF31AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6CF53A4267FC7FAED738EAA3 /* Pods-PinchableImageView_Tests.debug.xcconfig */;
+			baseConfigurationReference = 37A2C2B4658EC026CB2ED64A /* Pods-PinchableImageView_Tests.debug.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -539,12 +543,13 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		607FACF41AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 15D3AB1CF0CC22C47D645340 /* Pods-PinchableImageView_Tests.release.xcconfig */;
+			baseConfigurationReference = CE0E953BAF14285EA1132B2C /* Pods-PinchableImageView_Tests.release.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -554,6 +559,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

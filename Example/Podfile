@@ -1,12 +1,9 @@
-source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 
-target 'PinchableImageView_Example', :exclusive => true do
+target 'PinchableImageView_Example' do
   pod 'PinchableImageView', :path => '../'
+  target 'PinchableImageView_Tests' do
+    inherit! :search_paths
+  end
 end
 
-target 'PinchableImageView_Tests', :exclusive => true do
-  pod 'PinchableImageView', :path => '../'
-
-  
-end
