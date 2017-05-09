@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -157,8 +158,40 @@
                     <view key="view" contentMode="scaleToFill" id="3KE-wf-JKC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created in Interface Builder:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lmq-n3-H6W">
+                                <rect key="frame" x="16" y="72" width="214" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created in code:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Lx-MR-Mu4">
+                                <rect key="frame" x="16" y="341" width="126" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sunset" translatesAutoresizingMaskIntoConstraints="NO" id="G1W-sr-gea" customClass="PinchableImageView" customModule="PinchableImageView" customModuleProvider="target">
+                                <rect key="frame" x="87.5" y="101" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="0rG-E7-HfB"/>
+                                    <constraint firstAttribute="height" constant="200" id="6MG-vj-onH"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5Lx-MR-Mu4" firstAttribute="leading" secondItem="lmq-n3-H6W" secondAttribute="leading" id="J5T-Df-H7K"/>
+                            <constraint firstItem="G1W-sr-gea" firstAttribute="centerX" secondItem="3KE-wf-JKC" secondAttribute="centerX" id="WKZ-4n-95D"/>
+                            <constraint firstItem="5Lx-MR-Mu4" firstAttribute="top" secondItem="G1W-sr-gea" secondAttribute="bottom" constant="40" id="Yqm-Fu-N8B"/>
+                            <constraint firstItem="lmq-n3-H6W" firstAttribute="top" secondItem="9vl-lL-fVz" secondAttribute="bottom" constant="8" symbolic="YES" id="bbe-7T-Hew"/>
+                            <constraint firstItem="lmq-n3-H6W" firstAttribute="leading" secondItem="3KE-wf-JKC" secondAttribute="leadingMargin" id="bdf-m3-A7P"/>
+                            <constraint firstItem="G1W-sr-gea" firstAttribute="top" secondItem="lmq-n3-H6W" secondAttribute="bottom" constant="8" symbolic="YES" id="rG4-ax-r3W"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="createdInCodeLabel" destination="5Lx-MR-Mu4" id="sWc-oC-c4c"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sd4-5s-Yq1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -183,4 +216,7 @@
             <point key="canvasLocation" x="72.799999999999997" y="141.67916041979012"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Sunset" width="400" height="400"/>
+    </resources>
 </document>

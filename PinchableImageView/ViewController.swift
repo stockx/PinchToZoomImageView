@@ -9,27 +9,30 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    @IBOutlet weak var createdInCodeLabel: UILabel!
+    let pinchableImageView = PinchableImageView(frame: .zero)
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        pinchableImageView.image = #imageLiteral(resourceName: "Sunset")
+        view.addSubview(pinchableImageView)
+        pinchableImageView.translatesAutoresizingMaskIntoConstraints = false
+        
+        let views: [String : Any] = ["imageView": pinchableImageView, "label": createdInCodeLabel]
+        let metrics = ["size": 200]
+        
+        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[label]-[imageView(size)]",
+                                                           options: [],
+                                                           metrics: metrics,
+                                                           views: views))
+        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:[imageView(size)]",
+                                                           options: [],
+                                                           metrics: metrics,
+                                                           views: views))
+        view.addConstraint(NSLayoutConstraint(item: pinchableImageView, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1.0, constant: 0.0))
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
