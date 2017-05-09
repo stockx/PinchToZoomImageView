@@ -11,6 +11,7 @@ import UIKit
 public class PinchableImageView: UIImageView {
 
     fileprivate var pinchGestureRecognizer: UIPinchGestureRecognizer?
+    fileprivate var panGestureRecognizer: UIPanGestureRecognizer?
 
     public var isPinchable = true {
         didSet {
@@ -19,13 +20,22 @@ public class PinchableImageView: UIImageView {
         }
     }
     
+    private var scale: CGFloat = 1.0
+    
     // MARK: Init
     
     private func commonInit() {
         isUserInteractionEnabled = true
-        let gestureRecognizer = UIPinchGestureRecognizer(target: self, action: #selector(didPinchImage(_:)))
-        addGestureRecognizer(gestureRecognizer)
-        pinchGestureRecognizer = gestureRecognizer
+        
+        pinchGestureRecognizer = UIPinchGestureRecognizer(target: self, action: #selector(didPinchImage(_:)))
+        pinchGestureRecognizer?.delegate = self
+        addGestureRecognizer(pinchGestureRecognizer!)
+        
+        panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(didPanImage(_:)))
+        panGestureRecognizer?.delegate = self
+        panGestureRecognizer?.minimumNumberOfTouches = 2
+        panGestureRecognizer?.maximumNumberOfTouches = 2
+        addGestureRecognizer(panGestureRecognizer!)
     }
     
     public override init(frame: CGRect) {
@@ -38,25 +48,52 @@ public class PinchableImageView: UIImageView {
         commonInit()
     }
     
-    /// MARK: Helper
+    // MARK: Helper
     
     fileprivate func reset() {
-        UIView.animate(withDuration: 0.3) {
-            self.transform = .identity
+        print("resetting")
+        scale = 1.0
+        UIView.animate(withDuration: 2) {
+            self.layer.transform = CATransform3DIdentity
         }
     }
 
     @objc private func didPinchImage(_ recognizer: UIPinchGestureRecognizer) {
         if recognizer.scale >= 1.0 {
-            var transform = CATransform3DIdentity
-            transform = CATransform3DScale(transform, recognizer.scale, recognizer.scale, 1.01)
-            layer.transform = transform
+            scale = recognizer.scale
+            transform(withTranslation: .zero)
         }
-        
+
         if recognizer.state == .ended {
             reset()
         }
     }
+    
+    @objc private func didPanImage(_ recognizer: UIPanGestureRecognizer) {
+        if scale > 1.0 {
+            transform(withTranslation: recognizer.translation(in: self))
+        }
+    
+        if recognizer.state == .ended {
+            reset()
+        }
+    }
+    
+    /** 
+     Will transform the image with the
+     appropriate scale or translation.
+    */
+    private func transform(withTranslation translation: CGPoint) {
+        print("transforming!")
+        var transform = CATransform3DIdentity
+        transform = CATransform3DScale(transform, scale, scale, 1.01)
+        transform = CATransform3DTranslate(transform, translation.x, translation.y, 0)
+        layer.transform = transform
+    }
 }
 
-
+extension PinchableImageView: UIGestureRecognizerDelegate {
+    public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
+    }
+}
