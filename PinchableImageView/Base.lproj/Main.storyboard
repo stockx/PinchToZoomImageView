@@ -117,7 +117,7 @@
         <scene sceneID="qjl-9u-kdo">
             <objects>
                 <collectionViewController title="UICollectionViewController" id="UN6-vv-jid" customClass="CollectionViewController" customModule="PinchableImageView" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="blj-9I-3Km">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="blj-9I-3Km">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -172,21 +172,30 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sunset" translatesAutoresizingMaskIntoConstraints="NO" id="G1W-sr-gea" customClass="PinchableImageView" customModule="PinchableImageView" customModuleProvider="target">
-                                <rect key="frame" x="87.5" y="101" width="200" height="200"/>
+                                <rect key="frame" x="237.5" y="101" width="100" height="200"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="0rG-E7-HfB"/>
+                                    <constraint firstAttribute="width" constant="100" id="0rG-E7-HfB"/>
                                     <constraint firstAttribute="height" constant="200" id="6MG-vj-onH"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sunset" translatesAutoresizingMaskIntoConstraints="NO" id="WSH-Zp-eCL" customClass="PinchableImageView" customModule="PinchableImageView" customModuleProvider="target">
+                                <rect key="frame" x="37.5" y="101" width="100" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="kXq-sP-Skp"/>
+                                    <constraint firstAttribute="height" constant="200" id="tux-GL-efY"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="5Lx-MR-Mu4" firstAttribute="leading" secondItem="lmq-n3-H6W" secondAttribute="leading" id="J5T-Df-H7K"/>
-                            <constraint firstItem="G1W-sr-gea" firstAttribute="centerX" secondItem="3KE-wf-JKC" secondAttribute="centerX" id="WKZ-4n-95D"/>
+                            <constraint firstItem="G1W-sr-gea" firstAttribute="centerX" secondItem="3KE-wf-JKC" secondAttribute="centerX" constant="100" id="WKZ-4n-95D"/>
                             <constraint firstItem="5Lx-MR-Mu4" firstAttribute="top" secondItem="G1W-sr-gea" secondAttribute="bottom" constant="40" id="Yqm-Fu-N8B"/>
                             <constraint firstItem="lmq-n3-H6W" firstAttribute="top" secondItem="9vl-lL-fVz" secondAttribute="bottom" constant="8" symbolic="YES" id="bbe-7T-Hew"/>
                             <constraint firstItem="lmq-n3-H6W" firstAttribute="leading" secondItem="3KE-wf-JKC" secondAttribute="leadingMargin" id="bdf-m3-A7P"/>
+                            <constraint firstItem="WSH-Zp-eCL" firstAttribute="top" secondItem="lmq-n3-H6W" secondAttribute="bottom" constant="8" symbolic="YES" id="oBt-jJ-5Ya"/>
                             <constraint firstItem="G1W-sr-gea" firstAttribute="top" secondItem="lmq-n3-H6W" secondAttribute="bottom" constant="8" symbolic="YES" id="rG4-ax-r3W"/>
+                            <constraint firstItem="WSH-Zp-eCL" firstAttribute="centerX" secondItem="3KE-wf-JKC" secondAttribute="centerX" constant="-100" id="wj5-Qu-LZ8"/>
                         </constraints>
                     </view>
                     <connections>
