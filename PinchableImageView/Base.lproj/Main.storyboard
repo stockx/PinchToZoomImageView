@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--PinchableImageView-->
+        <!--Demo-->
         <scene sceneID="lEA-za-Bvx">
             <objects>
                 <tableViewController id="Mz8-IK-6Ol" sceneMemberID="viewController">
@@ -36,6 +36,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Cdj-0F-z9l" kind="show" id="Wyj-aN-8c8"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="zxe-ea-52t" style="IBUITableViewCellStyleDefault" id="PYc-rY-Yw2">
                                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
@@ -53,6 +56,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="psq-ly-FgE" kind="show" id="ORo-ut-sIJ"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="Zxd-eI-mBD" style="IBUITableViewCellStyleDefault" id="Ysu-7c-ajm">
                                         <rect key="frame" x="0.0" y="88" width="375" height="44"/>
@@ -70,6 +76,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="UN6-vv-jid" kind="show" id="WQI-eQ-Tbd"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -79,11 +88,81 @@
                             <outlet property="delegate" destination="Mz8-IK-6Ol" id="mRs-gN-Gok"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="PinchableImageView" id="35K-Hf-DvL"/>
+                    <navigationItem key="navigationItem" title="Demo" id="35K-Hf-DvL"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7e3-IA-kih" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1012" y="141.67916041979012"/>
+        </scene>
+        <!--Nested Subviews-->
+        <scene sceneID="Cu4-di-YcA">
+            <objects>
+                <viewController title="Nested Subviews" id="psq-ly-FgE" customClass="NestedSubviewsViewController" customModule="PinchableImageView" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="J5I-cq-mJQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="dMO-hp-Iw0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qhQ-wH-afz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2lj-Qv-xEC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1012" y="936"/>
+        </scene>
+        <!--UICollectionViewController-->
+        <scene sceneID="qjl-9u-kdo">
+            <objects>
+                <collectionViewController title="UICollectionViewController" id="UN6-vv-jid" customClass="CollectionViewController" customModule="PinchableImageView" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="blj-9I-3Km">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Jaw-vW-Y9K">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Ueh-dv-CPz">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </view>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="UN6-vv-jid" id="iuh-ZL-jky"/>
+                            <outlet property="delegate" destination="UN6-vv-jid" id="guO-xF-Bic"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2gJ-h9-Gj7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1740" y="936"/>
+        </scene>
+        <!--Basic UIViewController-->
+        <scene sceneID="ZXV-nz-Fno">
+            <objects>
+                <viewController title="Basic UIViewController" id="Cdj-0F-z9l" customClass="ViewController" customModule="PinchableImageView" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9vl-lL-fVz"/>
+                        <viewControllerLayoutGuide type="bottom" id="E0h-IR-9QN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3KE-wf-JKC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sd4-5s-Yq1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="302" y="936"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fOg-Pl-VFv">
