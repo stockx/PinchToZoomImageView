@@ -15,6 +15,7 @@
 		036BADB61EC2457700BCAFED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036BADB51EC2457700BCAFED /* ViewController.swift */; };
 		036BADB81EC2458700BCAFED /* NestedSubviewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036BADB71EC2458700BCAFED /* NestedSubviewsViewController.swift */; };
 		036BADBA1EC2459000BCAFED /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036BADB91EC2459000BCAFED /* CollectionViewController.swift */; };
+		036BADBD1EC2618700BCAFED /* PinchableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036BADBC1EC2618700BCAFED /* PinchableImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		036BADB51EC2457700BCAFED /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		036BADB71EC2458700BCAFED /* NestedSubviewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NestedSubviewsViewController.swift; sourceTree = "<group>"; };
 		036BADB91EC2459000BCAFED /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		036BADBC1EC2618700BCAFED /* PinchableImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinchableImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 		036BAD901EC2289A00BCAFED /* PinchableImageView */ = {
 			isa = PBXGroup;
 			children = (
+				036BADBB1EC2615600BCAFED /* Source */,
 				036BAD911EC2289A00BCAFED /* AppDelegate.swift */,
 				036BADB51EC2457700BCAFED /* ViewController.swift */,
 				036BADB71EC2458700BCAFED /* NestedSubviewsViewController.swift */,
@@ -100,6 +103,15 @@
 				036BADA81EC2289A00BCAFED /* Info.plist */,
 			);
 			path = PinchableImageViewTests;
+			sourceTree = "<group>";
+		};
+		036BADBB1EC2615600BCAFED /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				036BADBC1EC2618700BCAFED /* PinchableImageView.swift */,
+			);
+			name = Source;
+			path = ../Source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,6 +219,7 @@
 			files = (
 				036BADBA1EC2459000BCAFED /* CollectionViewController.swift in Sources */,
 				036BADB61EC2457700BCAFED /* ViewController.swift in Sources */,
+				036BADBD1EC2618700BCAFED /* PinchableImageView.swift in Sources */,
 				036BADB81EC2458700BCAFED /* NestedSubviewsViewController.swift in Sources */,
 				036BAD921EC2289A00BCAFED /* AppDelegate.swift in Sources */,
 			);
