@@ -130,7 +130,7 @@ public class PinchableImageView: UIImageView {
         }
     }
 
-    // MARK: Gesture recognizer handlers
+    // MARK: Gesture Recognizer handlers
 
     @objc private func didPinchImage(_ recognizer: UIPinchGestureRecognizer) {
         guard recognizer.state != .ended else {
