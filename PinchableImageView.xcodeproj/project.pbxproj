@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		033811181EC3CE7C0021FBBE /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033811171EC3CE7C0021FBBE /* TableViewController.swift */; };
 		036BAD921EC2289A00BCAFED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036BAD911EC2289A00BCAFED /* AppDelegate.swift */; };
 		036BAD971EC2289A00BCAFED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 036BAD951EC2289A00BCAFED /* Main.storyboard */; };
 		036BAD991EC2289A00BCAFED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 036BAD981EC2289A00BCAFED /* Assets.xcassets */; };
@@ -30,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		033811171EC3CE7C0021FBBE /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		036BAD8E1EC2289A00BCAFED /* PinchableImageView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PinchableImageView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		036BAD911EC2289A00BCAFED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		036BAD961EC2289A00BCAFED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 				036BADB51EC2457700BCAFED /* ViewController.swift */,
 				036BADB71EC2458700BCAFED /* NestedSubviewsViewController.swift */,
 				036BADB91EC2459000BCAFED /* CollectionViewController.swift */,
+				033811171EC3CE7C0021FBBE /* TableViewController.swift */,
 				036BAD951EC2289A00BCAFED /* Main.storyboard */,
 				036BAD981EC2289A00BCAFED /* Assets.xcassets */,
 				036BAD9A1EC2289A00BCAFED /* LaunchScreen.storyboard */,
@@ -222,6 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				036BADBA1EC2459000BCAFED /* CollectionViewController.swift in Sources */,
+				033811181EC3CE7C0021FBBE /* TableViewController.swift in Sources */,
 				036BADB61EC2457700BCAFED /* ViewController.swift in Sources */,
 				03CC375B1EC32F2F00BA3DC5 /* DemoTableViewController.swift in Sources */,
 				036BADBD1EC2618700BCAFED /* PinchableImageView.swift in Sources */,
