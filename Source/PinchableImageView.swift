@@ -113,8 +113,6 @@ public class PinchableImageView: UIImageView {
         window?.addSubview(imageViewCopy)
     }
     
-    // MARK: Helper
-    
     fileprivate func reset() {
         guard !isResetting else {
             return
@@ -131,6 +129,8 @@ public class PinchableImageView: UIImageView {
             self.isResetting = false
         }
     }
+
+    // MARK: Gesture recognizer handlers
 
     @objc private func didPinchImage(_ recognizer: UIPinchGestureRecognizer) {
         guard recognizer.state != .ended else {
