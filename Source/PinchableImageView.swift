@@ -90,7 +90,7 @@ public class PinchableImageView: UIImageView {
     fileprivate func reset() {
         scale = 1.0
         UIView.animate(withDuration: 0.3, animations: { 
-            self.imageViewCopy.layer.transform = CATransform3DIdentity
+            self.imageViewCopy.transform = .identity
         }) { (finished) in
             if finished {
                 self.resetImageViewCopyPosition()
@@ -118,10 +118,10 @@ public class PinchableImageView: UIImageView {
      appropriate scale or translation.
     */
     private func transform(withTranslation translation: CGPoint) {
-        var transform = CATransform3DIdentity
-        transform = CATransform3DScale(transform, scale, scale, 1.01)
-        transform = CATransform3DTranslate(transform, translation.x, translation.y, 0)
-        imageViewCopy.layer.transform = transform
+        var transform = CGAffineTransform.identity
+        transform = transform.scaledBy(x: scale, y: scale)
+        transform = transform.translatedBy(x: translation.x, y: translation.y)
+        imageViewCopy.transform = transform
     }
 }
 
