@@ -142,10 +142,17 @@ public class PinchableImageView: UIImageView {
             moveImageViewCopyToWindow()
         }
         
-        let newTransform = recognizer.view?.transform.scaledBy(x: recognizer.scale, y: recognizer.scale) ?? .identity
+        let newScale = imageViewCopyScale * recognizer.scale
         
+        // Don't allow pinching to smaller than the original size
+        guard newScale > 1.2 else {
+            return
+        }
+        
+        imageViewCopyScale = newScale
+        
+        let newTransform = recognizer.view?.transform.scaledBy(x: recognizer.scale, y: recognizer.scale) ?? .identity
         recognizer.view?.transform = newTransform
-        imageViewCopyScale = imageViewCopyScale * recognizer.scale
         recognizer.scale = 1
     }
     
