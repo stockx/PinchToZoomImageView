@@ -54,9 +54,18 @@ public class PinchableImageView: UIImageView {
     
     // MARK: Pinch management
     
+    private var scrollViewsScrollEnabled: [UIScrollView : Bool] = [:]
+    
     private var imageViewCopyScale: CGFloat = 1.0 {
         didSet {
             isHidden = imageViewCopyScale > 1.0
+
+            if oldValue <= 1.0 && imageViewCopyScale > 1.0 {
+                disableSuperviewScrolling()
+            }
+            else if oldValue > 1.0 && imageViewCopyScale <= 1.0 {
+                resetSuperviewScrolling()
+            }
         }
     }
     
@@ -112,6 +121,36 @@ public class PinchableImageView: UIImageView {
     }
     
     // MARK: Helper - imageViewCopy management
+    
+    /**
+     Loops over all superviews and for any that are a UIScrollView,
+     will disable scrolling.
+     
+     This should be called as soon as pinching begins.
+     */
+    private func disableSuperviewScrolling() {
+        var sv = superview
+        while sv != nil {
+            if let scrollView = sv as? UIScrollView {
+                scrollViewsScrollEnabled[scrollView] = scrollView.isScrollEnabled
+                scrollView.isScrollEnabled = false
+            }
+            sv = sv?.superview
+        }
+    }
+    
+    /**
+     Loops over all of the scroll views that we have previously modified the
+     isScrollEnabled property, and resets it to whatever it was before
+     changing it.
+     */
+    private func resetSuperviewScrolling() {
+        for (scrollView, isScrollEnabled) in scrollViewsScrollEnabled {
+            scrollView.isScrollEnabled = isScrollEnabled
+        }
+        
+        scrollViewsScrollEnabled.removeAll()
+    }
     
     private func resetImageViewCopyPosition() {
         addSubview(imageViewCopy)
