@@ -142,8 +142,13 @@ public class PinchableImageView: UIImageView {
         isResetting = true
         
         UIView.animate(withDuration: 0.3, animations: { [weak self] in
-            self?.imageViewCopy.center = self?.center ?? .zero
-            self?.imageViewCopy.transform = .identity
+            guard let weakSelf = self,
+                let window = UIApplication.shared.keyWindow else {
+                    return
+            }
+            
+            weakSelf.imageViewCopy.center = weakSelf.superview?.convert(weakSelf.center, to: window) ?? .zero
+            weakSelf.imageViewCopy.transform = .identity
         }) { [weak self] (finished)in
             self?.resetImageViewCopyPosition()
             self?.isResetting = false
