@@ -94,6 +94,11 @@ public class PinchableImageView: UIImageView {
         commonInit()
     }
     
+    deinit {
+        // Make sure that the imageViewCopy is not a subview of the window anymore
+        resetImageViewCopyPosition()
+    }
+    
     // MARK: Helper - imageViewCopy management
     
     private func resetImageViewCopyPosition() {
