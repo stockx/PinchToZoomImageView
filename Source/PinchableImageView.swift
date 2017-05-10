@@ -101,6 +101,11 @@ public class PinchableImageView: UIImageView {
         commonInit()
     }
     
+    public override init(image: UIImage?) {
+        super.init(image: image)
+        commonInit()
+    }
+    
     deinit {
         // Make sure that the imageViewCopy is not a subview of the window anymore
         resetImageViewCopyPosition()
