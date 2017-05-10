@@ -54,7 +54,11 @@ public class PinchableImageView: UIImageView {
     
     // MARK: Pinch management
     
-    private var imageViewCopyScale: CGFloat = 1.0
+    private var imageViewCopyScale: CGFloat = 1.0 {
+        didSet {
+            isHidden = imageViewCopyScale > 1.0
+        }
+    }
     
     // MARK: Init
     
@@ -120,13 +124,13 @@ public class PinchableImageView: UIImageView {
         
         isResetting = true
         
-        imageViewCopyScale = 1.0
         UIView.animate(withDuration: 0.3, animations: { [weak self] in
             self?.imageViewCopy.center = self?.center ?? .zero
             self?.imageViewCopy.transform = .identity
         }) { [weak self] (finished)in
             self?.resetImageViewCopyPosition()
             self?.isResetting = false
+            self?.imageViewCopyScale = 1.0
         }
     }
 
