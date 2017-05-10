@@ -26,9 +26,7 @@ public class PinchableImageView: UIImageView {
         didSet {
             isUserInteractionEnabled = isPinchable
             imageViewCopy.isUserInteractionEnabled = isPinchable
-            pinchGestureRecognizer?.isEnabled = isPinchable
-            panGestureRecognizer?.isEnabled = isPinchable
-            rotateGestureRecognizer?.isEnabled = isPinchable
+            imageViewCopy.gestureRecognizers?.forEach { $0.isEnabled = isPinchable }
         }
     }
     
