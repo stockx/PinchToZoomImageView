@@ -121,12 +121,12 @@ public class PinchableImageView: UIImageView {
         isResetting = true
         
         imageViewCopyScale = 1.0
-        UIView.animate(withDuration: 0.3, animations: {
-            self.imageViewCopy.center = self.center
-            self.imageViewCopy.transform = .identity
-        }) { (finished) in
-            self.resetImageViewCopyPosition()
-            self.isResetting = false
+        UIView.animate(withDuration: 0.3, animations: { [weak self] in
+            self?.imageViewCopy.center = self?.center ?? .zero
+            self?.imageViewCopy.transform = .identity
+        }) { [weak self] (finished)in
+            self?.resetImageViewCopyPosition()
+            self?.isResetting = false
         }
     }
 
