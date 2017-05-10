@@ -117,34 +117,37 @@ public class PinchableImageView: UIImageView {
     }
 
     @objc private func didPinchImage(_ recognizer: UIPinchGestureRecognizer) {
+        guard recognizer.state != .ended else {
+            reset()
+            return
+        }
+        
         if recognizer.state == .began {
             moveImageViewCopyToWindow()
         }
         
-        if recognizer.state == .ended {
-            reset()
-        }
-        else {
-            let newTransform = recognizer.view?.transform.scaledBy(x: recognizer.scale, y: recognizer.scale) ?? .identity
-            
-            recognizer.view?.transform = newTransform
-            scale = scale * recognizer.scale
-            recognizer.scale = 1
-        }
+        let newTransform = recognizer.view?.transform.scaledBy(x: recognizer.scale, y: recognizer.scale) ?? .identity
+        
+        recognizer.view?.transform = newTransform
+        scale = scale * recognizer.scale
+        recognizer.scale = 1
     }
     
     @objc private func didPanImage(_ recognizer: UIPanGestureRecognizer) {
-        if scale > 1.0 {
-            let translation = recognizer.translation(in: imageViewCopy.superview)
-            let originalCenter = imageViewCopy.center
-            let translatedCenter = CGPoint(x: originalCenter.x + translation.x, y: originalCenter.y + translation.y)
-            imageViewCopy.center = translatedCenter
-            recognizer.setTranslation(.zero, in: imageViewCopy)
+        guard scale > 1.0 else {
+            return
         }
         
-        if recognizer.state == .ended {
+        guard recognizer.state != .ended else {
             reset()
+            return
         }
+        
+        let translation = recognizer.translation(in: imageViewCopy.superview)
+        let originalCenter = imageViewCopy.center
+        let translatedCenter = CGPoint(x: originalCenter.x + translation.x, y: originalCenter.y + translation.y)
+        imageViewCopy.center = translatedCenter
+        recognizer.setTranslation(.zero, in: imageViewCopy)
     }
 
     /** 
