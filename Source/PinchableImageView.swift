@@ -56,6 +56,13 @@ public class PinchableImageView: UIImageView {
     
     private var scrollViewsScrollEnabled: [UIScrollView : Bool] = [:]
     
+    /**
+     This value represents the minimum scale that can be pinched/panned/rotated.
+     
+     Pinching/panning/rotating below this scale factor is disabled.
+     */
+    private let minimumPinchScale: CGFloat = 1.2
+    
     private var imageViewCopyScale: CGFloat = 1.0 {
         didSet {
             isHidden = imageViewCopyScale > 1.0
@@ -210,7 +217,7 @@ public class PinchableImageView: UIImageView {
         let newScale = imageViewCopyScale * recognizer.scale
         
         // Don't allow pinching to smaller than the original size
-        guard newScale > 1.2 else {
+        guard newScale > minimumPinchScale else {
             return
         }
         
@@ -222,7 +229,7 @@ public class PinchableImageView: UIImageView {
     }
     
     @objc private func didPanImage(_ recognizer: UIPanGestureRecognizer) {
-        guard imageViewCopyScale > 1.0 else {
+        guard imageViewCopyScale > minimumPinchScale else {
             return
         }
         
@@ -239,7 +246,7 @@ public class PinchableImageView: UIImageView {
     }
     
     @objc private func didRotateImage(_ recognizer: UIRotationGestureRecognizer) {
-        guard imageViewCopyScale > 1.0 else {
+        guard imageViewCopyScale > minimumPinchScale else {
             return
         }
         
