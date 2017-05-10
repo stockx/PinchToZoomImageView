@@ -11,14 +11,22 @@ import UIKit
 public class PinchableImageView: UIImageView {
 
     fileprivate var pinchGestureRecognizer: UIPinchGestureRecognizer?
+    fileprivate var panGestureRecognizer: UIPanGestureRecognizer?
     
     fileprivate var imageViewCopy = UIImageView(frame: .zero)
+    
+    /**
+     Internal property to determine if the PinchableImageView is currently
+     resetting. Helps to prevent duplicate resets simultaneously.
+     */
+    fileprivate var isResetting = false
 
     public var isPinchable = true {
         didSet {
             isUserInteractionEnabled = isPinchable
             imageViewCopy.isUserInteractionEnabled = isPinchable
             pinchGestureRecognizer?.isEnabled = isPinchable
+            panGestureRecognizer?.isEnabled = isPinchable
         }
     }
     
@@ -45,6 +53,10 @@ public class PinchableImageView: UIImageView {
         pinchGestureRecognizer = UIPinchGestureRecognizer(target: self, action: #selector(didPinchImage(_:)))
         pinchGestureRecognizer?.delegate = self
         imageViewCopy.addGestureRecognizer(pinchGestureRecognizer!)
+        
+        panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(didPanImage(_:)))
+        panGestureRecognizer?.delegate = self
+        imageViewCopy.addGestureRecognizer(panGestureRecognizer!)
         
         imageViewCopy.image = image
         imageViewCopy.contentMode = contentMode
@@ -88,13 +100,19 @@ public class PinchableImageView: UIImageView {
     // MARK: Helper
     
     fileprivate func reset() {
+        guard !isResetting else {
+            return
+        }
+        
+        isResetting = true
+        
         scale = 1.0
-        UIView.animate(withDuration: 0.3, animations: { 
+        UIView.animate(withDuration: 0.3, animations: {
+            self.imageViewCopy.center = self.center
             self.imageViewCopy.transform = .identity
         }) { (finished) in
-            if finished {
-                self.resetImageViewCopyPosition()
-            }
+            self.resetImageViewCopyPosition()
+            self.isResetting = false
         }
     }
 
@@ -102,17 +120,33 @@ public class PinchableImageView: UIImageView {
         if recognizer.state == .began {
             moveImageViewCopyToWindow()
         }
-
-        if recognizer.scale >= 1.0 {
-            scale = recognizer.scale
-            transform(withTranslation: .zero)
+        
+        if recognizer.state == .ended {
+            reset()
+        }
+        else {
+            let newTransform = recognizer.view?.transform.scaledBy(x: recognizer.scale, y: recognizer.scale) ?? .identity
+            
+            recognizer.view?.transform = newTransform
+            scale = scale * recognizer.scale
+            recognizer.scale = 1
+        }
+    }
+    
+    @objc private func didPanImage(_ recognizer: UIPanGestureRecognizer) {
+        if scale > 1.0 {
+            let translation = recognizer.translation(in: imageViewCopy.superview)
+            let originalCenter = imageViewCopy.center
+            let translatedCenter = CGPoint(x: originalCenter.x + translation.x, y: originalCenter.y + translation.y)
+            imageViewCopy.center = translatedCenter
+            recognizer.setTranslation(.zero, in: imageViewCopy)
         }
         
         if recognizer.state == .ended {
             reset()
         }
     }
-    
+
     /** 
      Will transform the image with the
      appropriate scale or translation.
