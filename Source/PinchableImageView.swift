@@ -71,6 +71,7 @@ public class PinchableImageView: UIImageView {
                 disableSuperviewScrolling()
             }
             else if oldValue > 1.0 && imageViewCopyScale <= 1.0 {
+                resetImageViewCopyPosition()
                 resetSuperviewScrolling()
             }
         }
@@ -123,8 +124,7 @@ public class PinchableImageView: UIImageView {
     }
     
     deinit {
-        // Make sure that the imageViewCopy is not a subview of the window anymore
-        resetImageViewCopyPosition()
+        imageViewCopyScale = 1.0
     }
     
     // MARK: Helper - imageViewCopy management
@@ -195,8 +195,7 @@ public class PinchableImageView: UIImageView {
             
             weakSelf.imageViewCopy.center = weakSelf.superview?.convert(weakSelf.center, to: window) ?? .zero
             weakSelf.imageViewCopy.transform = .identity
-        }) { [weak self] (finished)in
-            self?.resetImageViewCopyPosition()
+        }) { [weak self] (finished) in
             self?.isResetting = false
             self?.imageViewCopyScale = 1.0
         }
