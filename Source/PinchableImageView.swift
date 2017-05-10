@@ -179,17 +179,6 @@ public class PinchableImageView: UIImageView {
         recognizer.view?.transform = recognizer.view?.transform.rotated(by: recognizer.rotation) ?? .identity
         recognizer.rotation = 0
     }
-    
-    /**
-     Will transform the image with the
-     appropriate scale or translation.
-     */
-    private func transform(withTranslation translation: CGPoint) {
-        var transform = CGAffineTransform.identity
-        transform = transform.scaledBy(x: imageViewCopyScale, y: imageViewCopyScale)
-        transform = transform.translatedBy(x: translation.x, y: translation.y)
-        imageViewCopy.transform = transform
-    }
 }
 
 extension PinchableImageView: UIGestureRecognizerDelegate {
