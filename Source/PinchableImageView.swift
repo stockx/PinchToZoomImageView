@@ -140,9 +140,9 @@ public class PinchableImageView: UIImageView {
     }
     
     /**
-     Loops over all of the scroll views that we have previously modified the
-     isScrollEnabled property, and resets it to whatever it was before
-     changing it.
+     Loops over all of the scroll views that have gotten their isScrollEnabled
+     property modified, and resets them to whatever they were before
+     being modified.
      */
     private func resetSuperviewScrolling() {
         for (scrollView, isScrollEnabled) in scrollViewsScrollEnabled {
