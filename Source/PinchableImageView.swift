@@ -12,7 +12,8 @@ public class PinchableImageView: UIImageView {
 
     fileprivate var pinchGestureRecognizer: UIPinchGestureRecognizer?
     fileprivate var panGestureRecognizer: UIPanGestureRecognizer?
-    
+    fileprivate var rotateGestureRecognizer: UIRotationGestureRecognizer?
+
     fileprivate var imageViewCopy = UIImageView(frame: .zero)
     
     /**
@@ -27,6 +28,7 @@ public class PinchableImageView: UIImageView {
             imageViewCopy.isUserInteractionEnabled = isPinchable
             pinchGestureRecognizer?.isEnabled = isPinchable
             panGestureRecognizer?.isEnabled = isPinchable
+            rotateGestureRecognizer?.isEnabled = isPinchable
         }
     }
     
@@ -57,6 +59,10 @@ public class PinchableImageView: UIImageView {
         panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(didPanImage(_:)))
         panGestureRecognizer?.delegate = self
         imageViewCopy.addGestureRecognizer(panGestureRecognizer!)
+        
+        rotateGestureRecognizer = UIRotationGestureRecognizer(target: self, action: #selector(didRotateImage(_:)))
+        rotateGestureRecognizer?.delegate = self
+        imageViewCopy.addGestureRecognizer(rotateGestureRecognizer!)
         
         imageViewCopy.image = image
         imageViewCopy.contentMode = contentMode
@@ -149,8 +155,22 @@ public class PinchableImageView: UIImageView {
         imageViewCopy.center = translatedCenter
         recognizer.setTranslation(.zero, in: imageViewCopy)
     }
+    
+    @objc private func didRotateImage(_ recognizer: UIRotationGestureRecognizer) {
+        guard scale > 1.0 else {
+            return
+        }
+        
+        guard recognizer.state != .ended else {
+            reset()
+            return
+        }
+        
+        recognizer.view?.transform = recognizer.view?.transform.rotated(by: recognizer.rotation) ?? .identity
+        recognizer.rotation = 0
+    }
 
-    /** 
+    /**
      Will transform the image with the
      appropriate scale or translation.
     */
