@@ -13,7 +13,7 @@
         <!--Demo-->
         <scene sceneID="lEA-za-Bvx">
             <objects>
-                <tableViewController id="Mz8-IK-6Ol" sceneMemberID="viewController">
+                <tableViewController id="Mz8-IK-6Ol" customClass="DemoTableViewController" customModule="PinchableImageView" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="bSY-Yt-u3Q">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -38,7 +38,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="Cdj-0F-z9l" kind="show" id="Wyj-aN-8c8"/>
+                                            <segue destination="Cdj-0F-z9l" kind="show" identifier="showViewController" id="Wyj-aN-8c8"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="zxe-ea-52t" style="IBUITableViewCellStyleDefault" id="PYc-rY-Yw2">

@@ -16,6 +16,7 @@
 		036BADB81EC2458700BCAFED /* NestedSubviewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036BADB71EC2458700BCAFED /* NestedSubviewsViewController.swift */; };
 		036BADBA1EC2459000BCAFED /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036BADB91EC2459000BCAFED /* CollectionViewController.swift */; };
 		036BADBD1EC2618700BCAFED /* PinchableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036BADBC1EC2618700BCAFED /* PinchableImageView.swift */; };
+		03CC375B1EC32F2F00BA3DC5 /* DemoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CC375A1EC32F2F00BA3DC5 /* DemoTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		036BADB71EC2458700BCAFED /* NestedSubviewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NestedSubviewsViewController.swift; sourceTree = "<group>"; };
 		036BADB91EC2459000BCAFED /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		036BADBC1EC2618700BCAFED /* PinchableImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinchableImageView.swift; sourceTree = "<group>"; };
+		03CC375A1EC32F2F00BA3DC5 /* DemoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 			children = (
 				036BADBB1EC2615600BCAFED /* Source */,
 				036BAD911EC2289A00BCAFED /* AppDelegate.swift */,
+				03CC375A1EC32F2F00BA3DC5 /* DemoTableViewController.swift */,
 				036BADB51EC2457700BCAFED /* ViewController.swift */,
 				036BADB71EC2458700BCAFED /* NestedSubviewsViewController.swift */,
 				036BADB91EC2459000BCAFED /* CollectionViewController.swift */,
@@ -164,6 +167,7 @@
 				TargetAttributes = {
 					036BAD8D1EC2289A00BCAFED = {
 						CreatedOnToolsVersion = 8.3.1;
+						DevelopmentTeam = 4HAXE63WP8;
 						ProvisioningStyle = Automatic;
 					};
 					036BADA11EC2289A00BCAFED = {
@@ -219,6 +223,7 @@
 			files = (
 				036BADBA1EC2459000BCAFED /* CollectionViewController.swift in Sources */,
 				036BADB61EC2457700BCAFED /* ViewController.swift in Sources */,
+				03CC375B1EC32F2F00BA3DC5 /* DemoTableViewController.swift in Sources */,
 				036BADBD1EC2618700BCAFED /* PinchableImageView.swift in Sources */,
 				036BADB81EC2458700BCAFED /* NestedSubviewsViewController.swift in Sources */,
 				036BAD921EC2289A00BCAFED /* AppDelegate.swift in Sources */,
@@ -362,6 +367,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 4HAXE63WP8;
 				INFOPLIST_FILE = PinchableImageView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = stockx.PinchableImageView;
@@ -374,6 +380,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 4HAXE63WP8;
 				INFOPLIST_FILE = PinchableImageView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = stockx.PinchableImageView;
