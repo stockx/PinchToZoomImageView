@@ -81,6 +81,13 @@ public class PinchableImageView: UIImageView {
         imageViewCopy.image = image
         imageViewCopy.contentMode = contentMode
         
+        imageViewCopy.setContentCompressionResistancePriority(contentCompressionResistancePriority(for: .horizontal),
+                                                              for: .horizontal)
+        imageViewCopy.setContentCompressionResistancePriority(contentCompressionResistancePriority(for: .vertical),
+                                                              for: .vertical)
+        imageViewCopy.setContentHuggingPriority(contentHuggingPriority(for: .horizontal), for: .horizontal)
+        imageViewCopy.setContentHuggingPriority(contentHuggingPriority(for: .vertical), for: .vertical)
+        
         resetImageViewCopyPosition()
     }
     
