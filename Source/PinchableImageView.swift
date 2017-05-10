@@ -10,11 +10,13 @@ import UIKit
 
 public class PinchableImageView: UIImageView {
 
+    fileprivate var imageViewCopy = UIImageView(frame: .zero)
+
+    // MARK: Gesture Recognizers
+    
     fileprivate var pinchGestureRecognizer: UIPinchGestureRecognizer?
     fileprivate var panGestureRecognizer: UIPanGestureRecognizer?
     fileprivate var rotateGestureRecognizer: UIRotationGestureRecognizer?
-
-    fileprivate var imageViewCopy = UIImageView(frame: .zero)
     
     /**
      Internal property to determine if the PinchableImageView is currently
@@ -22,6 +24,12 @@ public class PinchableImageView: UIImageView {
      */
     fileprivate var isResetting = false
 
+    /**
+     Whether or not the image view is pinchable.
+     Set this to `false` in order to completely disable pinching/panning/rotating
+     functionality.
+     Defaults to `true`.
+     */
     public var isPinchable = true {
         didSet {
             isUserInteractionEnabled = isPinchable
@@ -30,6 +38,8 @@ public class PinchableImageView: UIImageView {
         }
     }
     
+    // MARK: UIImageView overrides
+
     public override var image: UIImage? {
         didSet {
             imageViewCopy.image = image
@@ -42,7 +52,9 @@ public class PinchableImageView: UIImageView {
         }
     }
     
-    private var scale: CGFloat = 1.0
+    // MARK: Pinch management
+    
+    private var imageViewCopyScale: CGFloat = 1.0
     
     // MARK: Init
     
@@ -110,7 +122,7 @@ public class PinchableImageView: UIImageView {
         
         isResetting = true
         
-        scale = 1.0
+        imageViewCopyScale = 1.0
         UIView.animate(withDuration: 0.3, animations: {
             self.imageViewCopy.center = self.center
             self.imageViewCopy.transform = .identity
@@ -133,12 +145,12 @@ public class PinchableImageView: UIImageView {
         let newTransform = recognizer.view?.transform.scaledBy(x: recognizer.scale, y: recognizer.scale) ?? .identity
         
         recognizer.view?.transform = newTransform
-        scale = scale * recognizer.scale
+        imageViewCopyScale = imageViewCopyScale * recognizer.scale
         recognizer.scale = 1
     }
     
     @objc private func didPanImage(_ recognizer: UIPanGestureRecognizer) {
-        guard scale > 1.0 else {
+        guard imageViewCopyScale > 1.0 else {
             return
         }
         
@@ -155,7 +167,7 @@ public class PinchableImageView: UIImageView {
     }
     
     @objc private func didRotateImage(_ recognizer: UIRotationGestureRecognizer) {
-        guard scale > 1.0 else {
+        guard imageViewCopyScale > 1.0 else {
             return
         }
         
@@ -174,7 +186,7 @@ public class PinchableImageView: UIImageView {
      */
     private func transform(withTranslation translation: CGPoint) {
         var transform = CGAffineTransform.identity
-        transform = transform.scaledBy(x: scale, y: scale)
+        transform = transform.scaledBy(x: imageViewCopyScale, y: imageViewCopyScale)
         transform = transform.translatedBy(x: translation.x, y: translation.y)
         imageViewCopy.transform = transform
     }
