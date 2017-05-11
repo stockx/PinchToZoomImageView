@@ -1,6 +1,6 @@
 //
 //  TableViewController.swift
-//  PinchableImageView
+//  PinchToZoomImageView
 //
 //  Created by Josh Sklar on 5/10/17.
 //  Copyright © 2017 StockX. All rights reserved.
