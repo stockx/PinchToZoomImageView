@@ -26,6 +26,8 @@ Description
 --------------
 
 - [x] Supports pinching, panning, and rotating.
+- [x] Works when used in a `UIViewController` or `UIScrollVieController` (e.g. `UICollectionViewController`, `UITableViewController`, etc.).
+- [x] Shows the pinched image overtop everything else on the screen, with the exception of the status bar.
 - [x] Fully configurable in Interface Builder and code.
 - [x] Example app to demonstrate the various configurations.
 
