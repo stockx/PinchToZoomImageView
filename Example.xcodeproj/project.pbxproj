@@ -32,13 +32,13 @@
 
 /* Begin PBXFileReference section */
 		033811171EC3CE7C0021FBBE /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
-		036BAD8E1EC2289A00BCAFED /* PinchableImageView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PinchableImageView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		036BAD8E1EC2289A00BCAFED /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		036BAD911EC2289A00BCAFED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		036BAD961EC2289A00BCAFED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		036BAD981EC2289A00BCAFED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		036BAD9B1EC2289A00BCAFED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		036BAD9D1EC2289A00BCAFED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		036BADA21EC2289A00BCAFED /* PinchableImageViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PinchableImageViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		036BADA21EC2289A00BCAFED /* ExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		036BADA61EC2289A00BCAFED /* PinchableImageViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinchableImageViewTests.swift; sourceTree = "<group>"; };
 		036BADA81EC2289A00BCAFED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		036BADB51EC2457700BCAFED /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -69,7 +69,7 @@
 		036BAD851EC2289A00BCAFED = {
 			isa = PBXGroup;
 			children = (
-				036BAD901EC2289A00BCAFED /* PinchableImageView */,
+				036BAD901EC2289A00BCAFED /* Example */,
 				036BADA51EC2289A00BCAFED /* PinchableImageViewTests */,
 				036BAD8F1EC2289A00BCAFED /* Products */,
 			);
@@ -78,13 +78,13 @@
 		036BAD8F1EC2289A00BCAFED /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				036BAD8E1EC2289A00BCAFED /* PinchableImageView.app */,
-				036BADA21EC2289A00BCAFED /* PinchableImageViewTests.xctest */,
+				036BAD8E1EC2289A00BCAFED /* Example.app */,
+				036BADA21EC2289A00BCAFED /* ExampleTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		036BAD901EC2289A00BCAFED /* PinchableImageView */ = {
+		036BAD901EC2289A00BCAFED /* Example */ = {
 			isa = PBXGroup;
 			children = (
 				036BADBB1EC2615600BCAFED /* Source */,
@@ -99,6 +99,7 @@
 				036BAD9A1EC2289A00BCAFED /* LaunchScreen.storyboard */,
 				036BAD9D1EC2289A00BCAFED /* Info.plist */,
 			);
+			name = Example;
 			path = PinchableImageView;
 			sourceTree = "<group>";
 		};
@@ -123,9 +124,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		036BAD8D1EC2289A00BCAFED /* PinchableImageView */ = {
+		036BAD8D1EC2289A00BCAFED /* Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 036BADAB1EC2289A00BCAFED /* Build configuration list for PBXNativeTarget "PinchableImageView" */;
+			buildConfigurationList = 036BADAB1EC2289A00BCAFED /* Build configuration list for PBXNativeTarget "Example" */;
 			buildPhases = (
 				036BAD8A1EC2289A00BCAFED /* Sources */,
 				036BAD8B1EC2289A00BCAFED /* Frameworks */,
@@ -135,14 +136,14 @@
 			);
 			dependencies = (
 			);
-			name = PinchableImageView;
+			name = Example;
 			productName = PinchableImageView;
-			productReference = 036BAD8E1EC2289A00BCAFED /* PinchableImageView.app */;
+			productReference = 036BAD8E1EC2289A00BCAFED /* Example.app */;
 			productType = "com.apple.product-type.application";
 		};
-		036BADA11EC2289A00BCAFED /* PinchableImageViewTests */ = {
+		036BADA11EC2289A00BCAFED /* ExampleTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 036BADAE1EC2289A00BCAFED /* Build configuration list for PBXNativeTarget "PinchableImageViewTests" */;
+			buildConfigurationList = 036BADAE1EC2289A00BCAFED /* Build configuration list for PBXNativeTarget "ExampleTests" */;
 			buildPhases = (
 				036BAD9E1EC2289A00BCAFED /* Sources */,
 				036BAD9F1EC2289A00BCAFED /* Frameworks */,
@@ -153,9 +154,9 @@
 			dependencies = (
 				036BADA41EC2289A00BCAFED /* PBXTargetDependency */,
 			);
-			name = PinchableImageViewTests;
+			name = ExampleTests;
 			productName = PinchableImageViewTests;
-			productReference = 036BADA21EC2289A00BCAFED /* PinchableImageViewTests.xctest */;
+			productReference = 036BADA21EC2289A00BCAFED /* ExampleTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -180,7 +181,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 036BAD891EC2289A00BCAFED /* Build configuration list for PBXProject "PinchableImageView" */;
+			buildConfigurationList = 036BAD891EC2289A00BCAFED /* Build configuration list for PBXProject "Example" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -193,8 +194,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				036BAD8D1EC2289A00BCAFED /* PinchableImageView */,
-				036BADA11EC2289A00BCAFED /* PinchableImageViewTests */,
+				036BAD8D1EC2289A00BCAFED /* Example */,
+				036BADA11EC2289A00BCAFED /* ExampleTests */,
 			);
 		};
 /* End PBXProject section */
@@ -247,7 +248,7 @@
 /* Begin PBXTargetDependency section */
 		036BADA41EC2289A00BCAFED /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 036BAD8D1EC2289A00BCAFED /* PinchableImageView */;
+			target = 036BAD8D1EC2289A00BCAFED /* Example */;
 			targetProxy = 036BADA31EC2289A00BCAFED /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -405,7 +406,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = stockx.PinchableImageViewTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PinchableImageView.app/PinchableImageView";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Example.app/Example";
 			};
 			name = Debug;
 		};
@@ -419,14 +420,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = stockx.PinchableImageViewTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PinchableImageView.app/PinchableImageView";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Example.app/Example";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		036BAD891EC2289A00BCAFED /* Build configuration list for PBXProject "PinchableImageView" */ = {
+		036BAD891EC2289A00BCAFED /* Build configuration list for PBXProject "Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				036BADA91EC2289A00BCAFED /* Debug */,
@@ -435,7 +436,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		036BADAB1EC2289A00BCAFED /* Build configuration list for PBXNativeTarget "PinchableImageView" */ = {
+		036BADAB1EC2289A00BCAFED /* Build configuration list for PBXNativeTarget "Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				036BADAC1EC2289A00BCAFED /* Debug */,
@@ -444,7 +445,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		036BADAE1EC2289A00BCAFED /* Build configuration list for PBXNativeTarget "PinchableImageViewTests" */ = {
+		036BADAE1EC2289A00BCAFED /* Build configuration list for PBXNativeTarget "ExampleTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				036BADAF1EC2289A00BCAFED /* Debug */,
