@@ -22,5 +22,5 @@ Features:
 
   s.ios.deployment_target = '8.2'
 
-  s.source_files = 'Source/*/**'
+  s.source_files = 'Source/**/*.swift'
 end
