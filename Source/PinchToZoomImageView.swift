@@ -10,6 +10,11 @@ import UIKit
 
 public class PinchToZoomImageView: UIImageView {
 
+    /**
+     Internal property that is a copy of the original image view.
+     This is the object that gets transformed and adjusted
+     while pinching/panning/rotating.
+     */
     fileprivate var imageViewCopy = UIImageView(frame: .zero)
 
     // MARK: Gesture Recognizers
@@ -54,10 +59,21 @@ public class PinchToZoomImageView: UIImageView {
     
     // MARK: Pinch management
     
+    /**
+     Internal property that helps manages the `isScrollEnabled` properties of
+     all superviews that are a UIScrollView.
+     
+     When pinching begins, any superview in the view heirarchy that is a
+     UIScrollView will have its `isScrollEnabled` property set to `false` to
+     disable simultaneous views scrolling.
+     When pinching ends, all of their `isScrollEnabled` properties are restored
+     to their initial values.
+     */
     private var scrollViewsScrollEnabled: [UIScrollView : Bool] = [:]
     
     /**
-     This value represents the minimum scale that can be pinched/panned/rotated.
+     Internal property that represents the minimum scale that can be
+     pinched/panned/rotated.
      
      Pinching/panning/rotating below this scale factor is disabled.
      */
@@ -124,7 +140,7 @@ public class PinchToZoomImageView: UIImageView {
     }
     
     deinit {
-        imageViewCopyScale = 1.0
+        cleanUp()
     }
     
     // MARK: Helper - imageViewCopy management
@@ -147,7 +163,7 @@ public class PinchToZoomImageView: UIImageView {
     }
     
     /**
-     Loops over all of the scroll views that have gotten their isScrollEnabled
+     Loops over all of the scroll views that have gotten their `isScrollEnabled`
      property modified, and resets them to whatever they were before
      being modified.
      */
@@ -196,9 +212,17 @@ public class PinchToZoomImageView: UIImageView {
             weakSelf.imageViewCopy.center = weakSelf.superview?.convert(weakSelf.center, to: window) ?? .zero
             weakSelf.imageViewCopy.transform = .identity
         }) { [weak self] (finished) in
-            self?.isResetting = false
-            self?.imageViewCopyScale = 1.0
+            self?.cleanUp()
         }
+    }
+    
+    /**
+     Applies clean up to `self` as well as the imageViewCopy by setting
+     its scale back to the original 1.0.
+     */
+    fileprivate func cleanUp() {
+        isResetting = false
+        imageViewCopyScale = 1.0
     }
 
     // MARK: Gesture Recognizer handlers
