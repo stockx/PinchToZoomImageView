@@ -16,7 +16,7 @@
 		036BADB61EC2457700BCAFED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036BADB51EC2457700BCAFED /* ViewController.swift */; };
 		036BADB81EC2458700BCAFED /* NestedSubviewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036BADB71EC2458700BCAFED /* NestedSubviewsViewController.swift */; };
 		036BADBA1EC2459000BCAFED /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036BADB91EC2459000BCAFED /* CollectionViewController.swift */; };
-		036BADBD1EC2618700BCAFED /* PinchableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036BADBC1EC2618700BCAFED /* PinchableImageView.swift */; };
+		036BADBD1EC2618700BCAFED /* PinchToZoomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036BADBC1EC2618700BCAFED /* PinchToZoomImageView.swift */; };
 		03CC375B1EC32F2F00BA3DC5 /* DemoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CC375A1EC32F2F00BA3DC5 /* DemoTableViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -44,7 +44,7 @@
 		036BADB51EC2457700BCAFED /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		036BADB71EC2458700BCAFED /* NestedSubviewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NestedSubviewsViewController.swift; sourceTree = "<group>"; };
 		036BADB91EC2459000BCAFED /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
-		036BADBC1EC2618700BCAFED /* PinchableImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinchableImageView.swift; sourceTree = "<group>"; };
+		036BADBC1EC2618700BCAFED /* PinchToZoomImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinchToZoomImageView.swift; sourceTree = "<group>"; };
 		03CC375A1EC32F2F00BA3DC5 /* DemoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -115,7 +115,7 @@
 		036BADBB1EC2615600BCAFED /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				036BADBC1EC2618700BCAFED /* PinchableImageView.swift */,
+				036BADBC1EC2618700BCAFED /* PinchToZoomImageView.swift */,
 			);
 			name = Source;
 			path = ../Source;
@@ -229,7 +229,7 @@
 				033811181EC3CE7C0021FBBE /* TableViewController.swift in Sources */,
 				036BADB61EC2457700BCAFED /* ViewController.swift in Sources */,
 				03CC375B1EC32F2F00BA3DC5 /* DemoTableViewController.swift in Sources */,
-				036BADBD1EC2618700BCAFED /* PinchableImageView.swift in Sources */,
+				036BADBD1EC2618700BCAFED /* PinchToZoomImageView.swift in Sources */,
 				036BADB81EC2458700BCAFED /* NestedSubviewsViewController.swift in Sources */,
 				036BAD921EC2289A00BCAFED /* AppDelegate.swift in Sources */,
 			);

@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var createdInCodeLabel: UILabel!
-    let pinchableImageView = PinchableImageView(frame: .zero)
+    let pinchableImageView = PinchToZoomImageView(frame: .zero)
 
     override func viewDidLoad() {
         super.viewDidLoad()

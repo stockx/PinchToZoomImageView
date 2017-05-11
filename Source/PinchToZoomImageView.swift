@@ -1,6 +1,6 @@
 //
-//  PinchableImageView.swift
-//  PinchableImageView
+//  PinchToZoomImageView.swift
+//  PinchToZoomImageView
 //
 //  Created by Josh Sklar on 5/9/17.
 //  Copyright © 2017 StockX. All rights reserved.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class PinchableImageView: UIImageView {
+public class PinchToZoomImageView: UIImageView {
 
     fileprivate var imageViewCopy = UIImageView(frame: .zero)
 
@@ -19,7 +19,7 @@ public class PinchableImageView: UIImageView {
     fileprivate var rotateGestureRecognizer: UIRotationGestureRecognizer?
     
     /**
-     Internal property to determine if the PinchableImageView is currently
+     Internal property to determine if the PinchToZoomImageView is currently
      resetting. Helps to prevent duplicate resets simultaneously.
      */
     fileprivate var isResetting = false
@@ -259,7 +259,7 @@ public class PinchableImageView: UIImageView {
     }
 }
 
-extension PinchableImageView: UIGestureRecognizerDelegate {
+extension PinchToZoomImageView: UIGestureRecognizerDelegate {
     public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return true
     }
