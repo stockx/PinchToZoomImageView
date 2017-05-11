@@ -14,7 +14,7 @@ Features:
 - Example app to demonstrate the various configurations.
                        DESC
 
-  s.homepage         = 'https://github.com/StockX/PinchToZoomImageView'
+  s.homepage         = 'https://github.com/stockx/PinchToZoomImageView/'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Josh Sklar' => 'jrmsklar@gmail.com' }
   s.source           = { :git => 'https://github.com/StockX/PinchToZoomImageView.git', :tag => s.version.to_s }
