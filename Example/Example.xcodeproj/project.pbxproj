@@ -10,13 +10,13 @@
 		030F06441EC4C1DF000440F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030F06431EC4C1DF000440F5 /* AppDelegate.swift */; };
 		030F064B1EC4C1DF000440F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 030F064A1EC4C1DF000440F5 /* Assets.xcassets */; };
 		030F064E1EC4C1DF000440F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 030F064C1EC4C1DF000440F5 /* LaunchScreen.storyboard */; };
-		030F065A1EC4E500000440F5 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030F06551EC4E500000440F5 /* CollectionViewController.swift */; };
-		030F065B1EC4E500000440F5 /* DemoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030F06561EC4E500000440F5 /* DemoTableViewController.swift */; };
-		030F065C1EC4E500000440F5 /* NestedSubviewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030F06571EC4E500000440F5 /* NestedSubviewsViewController.swift */; };
-		030F065D1EC4E500000440F5 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030F06581EC4E500000440F5 /* TableViewController.swift */; };
-		030F065E1EC4E500000440F5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030F06591EC4E500000440F5 /* ViewController.swift */; };
 		030F06631EC4E510000440F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 030F06611EC4E510000440F5 /* Main.storyboard */; };
 		030F06661EC4E532000440F5 /* PinchToZoomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030F06651EC4E532000440F5 /* PinchToZoomImageView.swift */; };
+		030F06771EC4EB8E000440F5 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030F06721EC4EB8E000440F5 /* CollectionViewController.swift */; };
+		030F06781EC4EB8E000440F5 /* DemoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030F06731EC4EB8E000440F5 /* DemoTableViewController.swift */; };
+		030F06791EC4EB8E000440F5 /* NestedSubviewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030F06741EC4EB8E000440F5 /* NestedSubviewsViewController.swift */; };
+		030F067A1EC4EB8E000440F5 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030F06751EC4EB8E000440F5 /* TableViewController.swift */; };
+		030F067B1EC4EB8E000440F5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030F06761EC4EB8E000440F5 /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,13 +25,13 @@
 		030F064A1EC4C1DF000440F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		030F064D1EC4C1DF000440F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		030F064F1EC4C1DF000440F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		030F06551EC4E500000440F5 /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
-		030F06561EC4E500000440F5 /* DemoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoTableViewController.swift; sourceTree = "<group>"; };
-		030F06571EC4E500000440F5 /* NestedSubviewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NestedSubviewsViewController.swift; sourceTree = "<group>"; };
-		030F06581EC4E500000440F5 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
-		030F06591EC4E500000440F5 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		030F06621EC4E510000440F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		030F06651EC4E532000440F5 /* PinchToZoomImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinchToZoomImageView.swift; sourceTree = "<group>"; };
+		030F06721EC4EB8E000440F5 /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		030F06731EC4EB8E000440F5 /* DemoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoTableViewController.swift; sourceTree = "<group>"; };
+		030F06741EC4EB8E000440F5 /* NestedSubviewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NestedSubviewsViewController.swift; sourceTree = "<group>"; };
+		030F06751EC4EB8E000440F5 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		030F06761EC4EB8E000440F5 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,11 +66,7 @@
 			children = (
 				030F06641EC4E520000440F5 /* Source */,
 				030F06431EC4C1DF000440F5 /* AppDelegate.swift */,
-				030F06551EC4E500000440F5 /* CollectionViewController.swift */,
-				030F06561EC4E500000440F5 /* DemoTableViewController.swift */,
-				030F06571EC4E500000440F5 /* NestedSubviewsViewController.swift */,
-				030F06581EC4E500000440F5 /* TableViewController.swift */,
-				030F06591EC4E500000440F5 /* ViewController.swift */,
+				030F06671EC4EB60000440F5 /* View Controllers */,
 				030F06611EC4E510000440F5 /* Main.storyboard */,
 				030F064A1EC4C1DF000440F5 /* Assets.xcassets */,
 				030F064C1EC4C1DF000440F5 /* LaunchScreen.storyboard */,
@@ -86,6 +82,18 @@
 			);
 			name = Source;
 			path = ../../Source;
+			sourceTree = "<group>";
+		};
+		030F06671EC4EB60000440F5 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				030F06721EC4EB8E000440F5 /* CollectionViewController.swift */,
+				030F06731EC4EB8E000440F5 /* DemoTableViewController.swift */,
+				030F06741EC4EB8E000440F5 /* NestedSubviewsViewController.swift */,
+				030F06751EC4EB8E000440F5 /* TableViewController.swift */,
+				030F06761EC4EB8E000440F5 /* ViewController.swift */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,13 +169,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				030F065E1EC4E500000440F5 /* ViewController.swift in Sources */,
-				030F065A1EC4E500000440F5 /* CollectionViewController.swift in Sources */,
+				030F06781EC4EB8E000440F5 /* DemoTableViewController.swift in Sources */,
+				030F067A1EC4EB8E000440F5 /* TableViewController.swift in Sources */,
+				030F06771EC4EB8E000440F5 /* CollectionViewController.swift in Sources */,
+				030F06791EC4EB8E000440F5 /* NestedSubviewsViewController.swift in Sources */,
+				030F067B1EC4EB8E000440F5 /* ViewController.swift in Sources */,
 				030F06441EC4C1DF000440F5 /* AppDelegate.swift in Sources */,
 				030F06661EC4E532000440F5 /* PinchToZoomImageView.swift in Sources */,
-				030F065B1EC4E500000440F5 /* DemoTableViewController.swift in Sources */,
-				030F065D1EC4E500000440F5 /* TableViewController.swift in Sources */,
-				030F065C1EC4E500000440F5 /* NestedSubviewsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
