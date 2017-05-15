@@ -6,7 +6,7 @@
 [![CocoaPods](https://img.shields.io/cocoapods/v/PinchableImageView.svg?style=flat)](http://cocoapods.org/pods/PinchableImageView)
 ![License](https://img.shields.io/github/license/malt03/PinchableImageView.svg?style=flat)
 
-![Screen Shot](https://raw.githubusercontent.com/malt03/PinchableImageView/master/Screenshot.gif)
+![Screen Shot](https://cloud.githubusercontent.com/assets/879038/26073881/162a8454-397e-11e7-96d7-aca5d5b75d25.gif)
 
 ## Usage
 
