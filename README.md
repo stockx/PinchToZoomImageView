@@ -12,7 +12,7 @@ Description
 
 `PinchToZoomImageView` is a drop-in replacement for `UIImageView` that supports pinching, panning, and rotating. Use cases include any occurences of an image that is zoomable. This was inspired by [InstaZoom](https://github.com/paulemmanuel-garcia/InstaZoom) and [ZoomRotatePanImageView](https://github.com/bennythemink/ZoomRotatePanImageView).
 
-![pinch-to-zoom-image-view](https://cloud.githubusercontent.com/assets/879038/25967266/8f865b50-365b-11e7-8eca-119dda482e36.gif)
+![pinch-to-zoom-image-view](https://cloud.githubusercontent.com/assets/879038/26073881/162a8454-397e-11e7-96d7-aca5d5b75d25.gif)
 
 # Contents
 1. [Features](#features)
