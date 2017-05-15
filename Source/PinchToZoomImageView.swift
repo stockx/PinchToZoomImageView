@@ -11,7 +11,7 @@ import UIKit
 open class PinchToZoomImageView: UIImageView {
     /**
      Internal property that is a copy of the original image view.
-     This is the object that gets transformed and adjusted
+     This is the view that gets transformed and adjusted
      while pinching/panning/rotating.
      */
     fileprivate var imageViewCopy = UIImageView(frame: .zero)
