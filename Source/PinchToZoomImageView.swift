@@ -88,7 +88,6 @@ open class PinchToZoomImageView: UIImageView {
     private var imageViewCopyScale: CGFloat = 1.0 {
         didSet {
             isHidden = imageViewCopyScale > 1.0
-            imageViewCopy.isHidden = imageViewCopyScale <= 1.0
             
             if oldValue <= 1.0 && imageViewCopyScale > 1.0 {
                 disableSuperviewScrolling()
