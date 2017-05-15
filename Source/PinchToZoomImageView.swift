@@ -92,6 +92,11 @@ open class PinchToZoomImageView: UIImageView {
             
             if oldValue <= 1.0 && imageViewCopyScale > 1.0 {
                 disableSuperviewScrolling()
+                moveImageViewCopyToWindow()
+                // Transfer all touch gesture recognizers to the imageViewCopy
+                gestureRecognizers?.forEach { [weak self] in
+                    self?.imageViewCopy.addGestureRecognizer($0)
+                }
             }
             else if oldValue > 1.0 && imageViewCopyScale <= 1.0 {
                 resetSuperviewScrolling()
@@ -234,14 +239,6 @@ open class PinchToZoomImageView: UIImageView {
         guard recognizer.state != .ended else {
             reset()
             return
-        }
-        
-        if recognizer.state == .began {
-            moveImageViewCopyToWindow()
-            // Transfer all touch gesture recognizers to the imageViewCopy
-            gestureRecognizers?.forEach { [weak self] in
-                self?.imageViewCopy.addGestureRecognizer($0)
-            }
         }
         
         let newScale = imageViewCopyScale * recognizer.scale
