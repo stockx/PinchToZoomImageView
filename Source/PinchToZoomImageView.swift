@@ -9,6 +9,12 @@
 import UIKit
 
 open class PinchToZoomImageView: UIImageView {
+    
+    /**
+     Overlay view used for a background when the image is being pinched.
+     */
+    private var overlayView = UIView()
+    
     /**
      Internal property that is a copy of the original image view.
      This is the view that gets transformed and adjusted
@@ -97,6 +103,8 @@ open class PinchToZoomImageView: UIImageView {
     // MARK: Init
     
     private func commonInit() {
+        overlayView.backgroundColor = .white
+        overlayView.alpha = 0.0
         isUserInteractionEnabled = true
         imageViewCopy.isUserInteractionEnabled = true
         
@@ -168,6 +176,7 @@ open class PinchToZoomImageView: UIImageView {
     }
     
     private func resetImageViewCopyPosition() {
+        overlayView.removeFromSuperview()
         imageViewCopy.removeFromSuperview()
     }
     
@@ -175,7 +184,14 @@ open class PinchToZoomImageView: UIImageView {
         let window = UIApplication.shared.keyWindow
         imageViewCopy.translatesAutoresizingMaskIntoConstraints = true
         imageViewCopy.frame = superview?.convert(frame, to: window) ?? .zero
+        overlayView.frame = window?.frame ?? .zero
+        
+        window?.addSubview(overlayView)
         window?.addSubview(imageViewCopy)
+        
+        UIView.animate(withDuration: 0.3) { [weak self] in
+            self?.overlayView.alpha = 1.0
+        }
     }
     
     fileprivate func reset() {
@@ -191,6 +207,7 @@ open class PinchToZoomImageView: UIImageView {
                     return
             }
             
+            weakSelf.overlayView.alpha = 0.0
             weakSelf.imageViewCopy.center = weakSelf.superview?.convert(weakSelf.center, to: window) ?? .zero
             weakSelf.imageViewCopy.transform = .identity
         }) { [weak self] (finished) in
