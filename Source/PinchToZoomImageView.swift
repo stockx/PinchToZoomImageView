@@ -38,6 +38,7 @@ open class PinchToZoomImageView: UIImageView {
         didSet {
             isUserInteractionEnabled = isPinchable
             imageViewCopy.isUserInteractionEnabled = isPinchable
+            gestureRecognizers?.forEach { $0.isEnabled = isPinchable }
             imageViewCopy.gestureRecognizers?.forEach { $0.isEnabled = isPinchable }
         }
     }
@@ -81,13 +82,14 @@ open class PinchToZoomImageView: UIImageView {
     private var imageViewCopyScale: CGFloat = 1.0 {
         didSet {
             isHidden = imageViewCopyScale > 1.0
-
+            imageViewCopy.isHidden = imageViewCopyScale <= 1.0
+            
             if oldValue <= 1.0 && imageViewCopyScale > 1.0 {
                 disableSuperviewScrolling()
             }
             else if oldValue > 1.0 && imageViewCopyScale <= 1.0 {
-                resetImageViewCopyPosition()
                 resetSuperviewScrolling()
+                resetImageViewCopyPosition()
             }
         }
     }
@@ -100,27 +102,18 @@ open class PinchToZoomImageView: UIImageView {
         
         pinchGestureRecognizer = UIPinchGestureRecognizer(target: self, action: #selector(didPinchImage(_:)))
         pinchGestureRecognizer?.delegate = self
-        imageViewCopy.addGestureRecognizer(pinchGestureRecognizer!)
+        addGestureRecognizer(pinchGestureRecognizer!)
         
         panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(didPanImage(_:)))
         panGestureRecognizer?.delegate = self
-        imageViewCopy.addGestureRecognizer(panGestureRecognizer!)
+        addGestureRecognizer(panGestureRecognizer!)
         
         rotateGestureRecognizer = UIRotationGestureRecognizer(target: self, action: #selector(didRotateImage(_:)))
         rotateGestureRecognizer?.delegate = self
-        imageViewCopy.addGestureRecognizer(rotateGestureRecognizer!)
+        addGestureRecognizer(rotateGestureRecognizer!)
         
         imageViewCopy.image = image
         imageViewCopy.contentMode = contentMode
-        
-        imageViewCopy.setContentCompressionResistancePriority(contentCompressionResistancePriority(for: .horizontal),
-                                                              for: .horizontal)
-        imageViewCopy.setContentCompressionResistancePriority(contentCompressionResistancePriority(for: .vertical),
-                                                              for: .vertical)
-        imageViewCopy.setContentHuggingPriority(contentHuggingPriority(for: .horizontal), for: .horizontal)
-        imageViewCopy.setContentHuggingPriority(contentHuggingPriority(for: .vertical), for: .vertical)
-        
-        resetImageViewCopyPosition()
     }
     
     public override init(frame: CGRect) {
@@ -175,17 +168,7 @@ open class PinchToZoomImageView: UIImageView {
     }
     
     private func resetImageViewCopyPosition() {
-        addSubview(imageViewCopy)
-        imageViewCopy.translatesAutoresizingMaskIntoConstraints = false
-        let views = ["imageView": imageViewCopy]
-        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[imageView]|",
-                                                      options: [],
-                                                      metrics: nil,
-                                                      views: views))
-        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[imageView]|",
-                                                      options: [],
-                                                      metrics: nil,
-                                                      views: views))
+        imageViewCopy.removeFromSuperview()
     }
     
     private func moveImageViewCopyToWindow() {
@@ -212,6 +195,10 @@ open class PinchToZoomImageView: UIImageView {
             weakSelf.imageViewCopy.transform = .identity
         }) { [weak self] (finished) in
             self?.cleanUp()
+            // Transfer all touch gesture recognizers back to the main image view
+            self?.imageViewCopy.gestureRecognizers?.forEach { [weak self] in
+                self?.addGestureRecognizer($0)
+            }
         }
     }
     
@@ -234,6 +221,10 @@ open class PinchToZoomImageView: UIImageView {
         
         if recognizer.state == .began {
             moveImageViewCopyToWindow()
+            // Transfer all touch gesture recognizers to the imageViewCopy
+            gestureRecognizers?.forEach { [weak self] in
+                self?.imageViewCopy.addGestureRecognizer($0)
+            }
         }
         
         let newScale = imageViewCopyScale * recognizer.scale
