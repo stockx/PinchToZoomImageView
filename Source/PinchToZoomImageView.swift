@@ -8,8 +8,7 @@
 
 import UIKit
 
-public class PinchToZoomImageView: UIImageView {
-
+open class PinchToZoomImageView: UIImageView {
     /**
      Internal property that is a copy of the original image view.
      This is the object that gets transformed and adjusted
@@ -44,14 +43,14 @@ public class PinchToZoomImageView: UIImageView {
     }
     
     // MARK: UIImageView overrides
-
-    public override var image: UIImage? {
+    
+    open override var image: UIImage? {
         didSet {
             imageViewCopy.image = image
         }
     }
     
-    public override var contentMode: UIViewContentMode {
+    open override var contentMode: UIViewContentMode {
         didSet {
             imageViewCopy.contentMode = contentMode
         }
