@@ -83,7 +83,7 @@ open class PinchToZoomImageView: UIImageView {
      
      Pinching/panning/rotating below this scale factor is disabled.
      */
-    private let minimumPinchScale: CGFloat = 1.2
+    private let minimumPinchScale: CGFloat = 1.0
     
     private var imageViewCopyScale: CGFloat = 1.0 {
         didSet {
