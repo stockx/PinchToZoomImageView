@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'PinchToZoomImageView'
-  s.version          = '1.0.0'
+  s.version          = '1.1.0'
   s.screenshot       = 'https://cloud.githubusercontent.com/assets/879038/25967266/8f865b50-365b-11e7-8eca-119dda482e36.gif'
   s.summary          = 'PinchToZoomImageView is a drop-in replacement for UIImageView that supports pinching, panning, and rotating.'
   s.description      = <<-DESC
