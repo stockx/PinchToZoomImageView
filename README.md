@@ -1,7 +1,5 @@
 ![PincToZoom Logo](https://cloud.githubusercontent.com/assets/879038/25967075/ee645970-365a-11e7-9023-80aef07d25a2.jpg)
 
-# Write that this was inspired by InstaZoom, and ZoomRotatePanImageView
-
 ![Swift3.1](https://img.shields.io/badge/Swift-3.1-orange.svg?style=flat")
 [![Platform](https://img.shields.io/cocoapods/p/PinchToZoomImageView.svg?style=flat)](http://cocoapods.org/pods/PinchToZoomImageView)
 [![Version](https://img.shields.io/cocoapods/v/PinchToZoomImageView.svg?style=flat)](http://cocoapods.org/pods/PinchToZoomImageView)
